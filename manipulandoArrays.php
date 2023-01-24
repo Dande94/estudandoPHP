@@ -42,7 +42,4 @@ if(in_array("Anderson", $array4)){//in_array() verifica se existe aquele valor d
     echo "Vendedor foi Anderson";
 }
 echo "<br>";
-
-
-
 ?>
