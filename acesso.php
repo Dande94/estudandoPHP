@@ -20,11 +20,14 @@ try{//usando o 'try' para iniciar uma aplicação que externa ao arquivo nesse c
    // $sql="INSERT INTO `posts`(`titulo`, `data_criada`, `corpo`, `autor`) VALUES ('$titulo','2022-06-30 12:06:23','$corpo','$autor')" ;//inserindo um registro no bando de dados com variaveis
    //echo "Usuário Inserido ".$pdo->lastInsertId();//trás o Id do ultimo insert feito;
     //--
-    $sql = "UPDATE `posts` SET `autor`='Ricardo B dos Santos' WHERE id = 5";//atualizando dos dados do banco de dados;
-    $pdo->query($sql);//como não será retornado nada, pode apenas executa o pdo
+    //$sql = "UPDATE `posts` SET `autor`='Ricardo B dos Santos' WHERE id = 5";//atualizando dos dados do banco de dados;
     //echo "Dados alterados com sucesso";
     //--
-
+    $sql = "DELETE FROM posts WHERE id = 7";//cuidado para não esquecer de especificar onde ocorrerá o delete;
+    //echo "autor deletado com sucesso";
+    
+    //--
+    $pdo->query($sql);//como não será retornado nada, pode apenas executa o pdo
     //$sql = $pdo->query($sql);//rescrevendo o comando do banco de dados com a conexão com o banco de dados;caso necessi retorna algo;
 
 
