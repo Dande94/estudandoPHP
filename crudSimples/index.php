@@ -21,12 +21,16 @@ require_once "conexaoBanco.php";
     span{
         padding: 2px; 
     }
-    span a{
+    span a,
+    a{
         text-decoration:none;
     }
 
 </style>
 <body>
+    <a href="registro.php">Adicionar Novo Usuário ➕</a>
+    <br>
+    <br>
 <table>
     <thead>
         <th>Usuário</th>
