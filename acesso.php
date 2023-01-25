@@ -10,16 +10,19 @@ try{//usando o 'try' para iniciar uma aplicação que externa ao arquivo nesse c
     $pdo = new PDO($dsn, $dbuser, $dbpass);// inicia a classe(objeto) PDO que usa as variaveis de conexão como parametro;
     //echo "Conexão estabelecida com sucesso!";// mensagem de sucesso;
 
-    $sql = "SELECT * FROM posts WHERE autor LIKE '%Nunes%'";//query de requisição para o banco de dados; com filtro de se tiver 'Nunes' é válido;
+    //$sql = "SELECT * FROM posts WHERE autor LIKE '%Nunes%'";//query de requisição para o banco de dados; com filtro de se tiver 'Nunes' é válido;
+    $sql="INSERT INTO `posts`(`titulo`, `data_criada`, `corpo`, `autor`) VALUES ('Titulo de Inserção2','2022-06-29 02:01:23','Um texto Incrivel 2','Teresinha Silva')" ;//inserndo um registro no bando de dados;
     $sql = $pdo->query($sql);//rescrevendo o comando do banco de dados com a conexão com o banco de dados;
 
-    if($sql->rowCount() > 0){//se a pesquisa tiver mais de 0 linhas a condição foi satisfeita;
-        foreach($sql->fetchAll() as $autor) {//fetchAll() irá pegar os resultados dentro de $sql e trasformrá em um array,o identifacador de desse array será '$autor';
-            echo "Nome: ".$autor["autor"]." - ".$autor["titulo"]."<br>";//estrutura do resultados;
-        }
-    }else{//caso a pesquisa retorne 0 linhas;
-        echo "Não autores Cadastrados!";//expressãodo erro;
-    };
+    echo "Usuário Inserido ".$pdo->lastInsertId();
+
+    // if($sql->rowCount() > 0){//se a pesquisa tiver mais de 0 linhas a condição foi satisfeita;
+    //     foreach($sql->fetchAll() as $autor) {//fetchAll() irá pegar os resultados dentro de $sql e trasformrá em um array,o identifacador de desse array será '$autor';
+    //         echo "Nome: ".$autor["autor"]." - ".$autor["titulo"]."<br>";//estrutura do resultados;
+    //     }
+    // }else{//caso a pesquisa retorne 0 linhas;
+    //     echo "Não autores Cadastrados!";//expressãodo erro;
+    // };
 
 
 }catch(PDOException $e){//caso falhe, entrará em 'catch' que irá expressar o erro; a varivel '$e' terá nela a PDOException(ou seja qual o erro que ocorreu);
