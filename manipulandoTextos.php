@@ -26,7 +26,7 @@ echo "<br>";
 echo strtoupper("anderson nunes");//transformar em maiúscula;
 echo "<br>";
 
-$u = substr($nome, -24,-1);//fatiar uma string pu selecionar intervalos, 1º parametro a string, 2º parametro onde inicia o corte, 3º parametro onde termina o corte; com numeros negativos pode se começar pelo final da string;, a lógica també inverte, o valo mais londe do zero tem que ir no parametro de inicio, 
+$u = substr($nome, -24,-1);//fatiar uma string ou selecionar intervalos, 1º parametro a string, 2º parametro onde inicia o corte, 3º parametro onde termina o corte; com numeros negativos pode se começar pelo final da string;, a lógica també inverte, o valo mais londe do zero tem que ir no parametro de inicio, 
 echo $u;
 echo "<br>";
 
