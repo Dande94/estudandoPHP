@@ -11,17 +11,22 @@ try{//usando o 'try' para iniciar uma aplicação que externa ao arquivo nesse c
     //echo "Conexão estabelecida com sucesso!";// mensagem de sucesso;
 
     //$sql = "SELECT * FROM posts WHERE autor LIKE '%Nunes%'";//query de requisição para o banco de dados; com filtro de se tiver 'Nunes' é válido;
+    //--
     //$sql="INSERT INTO `posts`(`titulo`, `data_criada`, `corpo`, `autor`) VALUES ('Titulo de Inserção2','2022-06-29 02:01:23','Um texto Incrivel 2','Teresinha Silva')" ;//inserindo um registro no bando de dados;
-    $titulo="Titulo de Inserção3";
-    $corpo = "Um texto Incrivel 3";
-    $autor= "Edson Cavilha";
-    $sql="INSERT INTO `posts`(`titulo`, `data_criada`, `corpo`, `autor`) VALUES ('$titulo','2022-06-30 12:06:23','$corpo','$autor')" ;//inserindo um registro no bando de dados com variaveis
+    //--
+   // $titulo="Titulo de Inserção3";
+   // $corpo = "Um texto Incrivel 3";
+   // $autor= "Edson Cavilha";
+   // $sql="INSERT INTO `posts`(`titulo`, `data_criada`, `corpo`, `autor`) VALUES ('$titulo','2022-06-30 12:06:23','$corpo','$autor')" ;//inserindo um registro no bando de dados com variaveis
+   //echo "Usuário Inserido ".$pdo->lastInsertId();//trás o Id do ultimo insert feito;
+    //--
+    $sql = "UPDATE `posts` SET `autor`='Ricardo B dos Santos' WHERE id = 5";//atualizando dos dados do banco de dados;
+    $pdo->query($sql);//como não será retornado nada, pode apenas executa o pdo
+    //echo "Dados alterados com sucesso";
+    //--
 
+    //$sql = $pdo->query($sql);//rescrevendo o comando do banco de dados com a conexão com o banco de dados;caso necessi retorna algo;
 
-
-    $sql = $pdo->query($sql);//rescrevendo o comando do banco de dados com a conexão com o banco de dados;
-
-    echo "Usuário Inserido ".$pdo->lastInsertId();//trás o Id do ultimo insert feito;
 
     // if($sql->rowCount() > 0){//se a pesquisa tiver mais de 0 linhas a condição foi satisfeita;
     //     foreach($sql->fetchAll() as $autor) {//fetchAll() irá pegar os resultados dentro de $sql e trasformrá em um array,o identifacador de desse array será '$autor';
