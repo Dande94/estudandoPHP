@@ -18,12 +18,16 @@ require_once "conexaoBanco.php";
         text-align:left;
         border-bottom:2px solid #999;
     }
-    span{
+    span a{
         padding: 2px; 
+        margim-left: 5px;
     }
     span a,
     a{
         text-decoration:none;
+    }
+    tr:nth-child(even){
+        background-color:#ddd;
     }
 
 </style>
