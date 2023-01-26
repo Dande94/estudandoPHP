@@ -15,6 +15,8 @@ if(isset($_POST['nome']) && empty($_POST['nome']) == false){
     $sql -> bindValue(':senha', $senha);
     $sql->execute();
 
+    
+
     header("Location: index.php");
 }
 
