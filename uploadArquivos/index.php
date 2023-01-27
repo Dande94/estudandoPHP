@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="recebedor.php" enctype="multipart/form-data" method="post">
+    <form action="recebedor.php" enctype="multipart/form-data" method="POST">
         <!-- enctype="multipart/form-data" -> encriptador de arquivos -->
         <input type="file" name="arquivo" id=""> <br><br>
         <input type="submit" value="Enviar">
