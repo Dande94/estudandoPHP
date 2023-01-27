@@ -1,5 +1,20 @@
 <?php
 require_once "conexaoBanco.php";
+
+if(isset($_GET['ordem']) && !empty($_GET['ordem'])){
+    $ordem = addslashes($_GET['ordem']);
+    $fator = addslashes($_GET['fator']);
+    $sql = "SELECT * FROM usuarios ORDER BY ".$ordem." ".$fator;
+    // $sql = $pdo->prepare($sql);
+    // $sql -> bindValue(':ordem', $ordem);
+    // $sql->execute();  
+}else{
+    $ordem = "";
+    $sql = "SELECT * FROM usuarios";
+    // $sql = $pdo->prepare($sql);
+    // $sql->execute();  
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,11 +40,14 @@ require_once "conexaoBanco.php";
 </style>
 <body>
     <form action="" method="get">
-        <select name="ordem" id="">
+        <select name="ordem" id="" onchange="this.form.submit()">
             <option ></option>
-            <option value="nome">Pelo Nome</option>
-            <option value="idade">Pela Idade</option>
-        </select>
+            <option value="nome" <?php echo ($ordem=="nome")?'selected="selected"':'';?>>Pelo Nome</option>
+            <option value="idade"<?php echo ($ordem=="idade")?'selected="selected"':'';?>>Pela Idade</option>
+        </select><br><br>
+        <input type="radio" name="fator" value="ASC" id="" onchange="this.form.submit()" <?php echo ($fator=="ASC")?'checked="checked"':'';?>>Crescente
+        <input type="radio" name="fator" value="DESC" id="" onchange="this.form.submit()"<?php echo ($fator=="DESC")?'checked="checked"':'';?>>Decrescente
+        
     </form> <br><br>
     <table>
         <thead>
@@ -38,9 +56,8 @@ require_once "conexaoBanco.php";
         </thead>
         <tbody>
             <?php
-            $sql = "SELECT * FROM usuarios";
-            $sql = $pdo->prepare($sql);
-            $sql->execute();
+          
+            $sql = $pdo->query($sql);
             if($sql->rowCount() > 0){
              foreach($sql->fetchAll() as $usuario):
                 ?>
