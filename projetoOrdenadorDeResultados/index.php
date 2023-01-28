@@ -1,6 +1,6 @@
 <?php
 require_once "conexaoBanco.php";
-
+$fator = "ASC";
 if(isset($_GET['ordem']) && !empty($_GET['ordem'])){
     $ordem = addslashes($_GET['ordem']);
     $fator = addslashes($_GET['fator']);
