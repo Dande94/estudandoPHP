@@ -51,9 +51,9 @@ $sql -> execute();
 if($sql->rowCount() > 0){
     foreach($sql->fetchAll() as $mensagem):
         ?>
-        <strong> <?php echo $mensagem['nome']  ?> </strong><br>
+        <strong> <?php echo $mensagem['nome']  ?> </strong> <sup><?php echo $mensagem['data_msg'] ?></sup><br>
         <?php echo $mensagem['msg']  ?> <br>
-        <sub><?php echo $mensagem['data_msg'] ?></sub>
+       
         <hr>
         <?php
     endforeach;
