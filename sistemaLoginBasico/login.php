@@ -5,7 +5,7 @@ if(isset($_POST['email']) && empty($_POST['email']) == false){
     
     require_once "conexaoBanco.php";
     $email = $_POST['email'];
-    $senha = md5($_POST['senha']);
+    $senha = sha1($_POST['senha']);
     
     $sql = "SELECT * FROM usuarios WHERE email = :email AND senha = :senha";
         $sql = $pdo->prepare($sql);
@@ -16,7 +16,7 @@ if(isset($_POST['email']) && empty($_POST['email']) == false){
         if($sql -> rowCount() > 0 ){
             $dado = $sql->fetch();
             // print_r($dado);
-            $_SESSION['id'] = $dado['id'];
+            $_SESSION['logado'] = $dado['logado'];
             header("Location: index.php");
         }
     

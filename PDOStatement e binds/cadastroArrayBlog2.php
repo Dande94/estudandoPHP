@@ -11,7 +11,7 @@ try{
 
     // $nome = "Beltrano de Tal";
     $email = "jayway@burakarda.xyz";
-    $senha = md5("123456");
+    $senha = sha1("123");
 
 
    foreach($nomes as $nome){

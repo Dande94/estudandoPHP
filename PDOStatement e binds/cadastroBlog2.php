@@ -8,7 +8,7 @@ try{
 
     $nome = "Beltrano de Tal";
     $email = "jayway@burakarda.xyz";
-    $senha = md5("123456");
+    $senha = sha1("123456");
 
 
     $sql = "INSERT INTO usuarios SET nome = :nome, email = :email, senha = :senha";//usa a mesma lógica do temaplte string
