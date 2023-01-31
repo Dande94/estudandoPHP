@@ -32,7 +32,7 @@ if($sql->rowCount() > 0){
 </head>
 <body>
     <h1>Área Interna do sistema</h1>
-    <span><h3>Usuário: <?php echo $email;?> - <a href="">Sair</a></h3>
-    <p>LInk: http://localhost/projeto_registroporconvite/cadastrar.php?codigo=<?php echo $codigo; ?></p>
+    <span><h3>Usuário: <?php echo $email;?> - <a href="sair.php">Sair</a></h3>
+    <p>LInk: http://127.0.0.1/b7web/EstudandoPHP/projetoRegistroPorConvite/cadastrar.php?codigo=<?php echo $codigo; ?></p>
 </body>
 </html>
