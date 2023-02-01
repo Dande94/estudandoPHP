@@ -6,7 +6,21 @@ if(isset($_POST['agencia']) && !empty($_POST['agencia'])){
 
     $agencia = addslashes($_POST['agencia']);
     $conta = addslashes($_POST['conta']);
-    $senha = sha1(addslashes($_POST['senha']));
+    $senha = sha1($_POST['senha']);
+
+    $sql = "SELECT * FROM contas WHERE agencia = :agencia AND conta = :conta AND senha = :senha";
+    $sql = $pdo->prepare($sql);
+    $sql -> bindValue(':agencia', $agencia);
+    $sql -> bindValue(':conta', $conta);
+    $sql -> bindValue(':senha', $senha);
+    $sql->execute();
+
+    if($sql->rowCount() > 0){
+        $sql = $sql->fetch();
+        $_SESSION['banco']=$sql['id'];
+        header("Location: index.php");
+        exit;
+    }
 
 }else{
 

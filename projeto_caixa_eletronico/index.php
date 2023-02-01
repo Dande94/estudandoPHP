@@ -21,7 +21,7 @@ if(isset($_SESSION['banco']) && !empty($_SESSION['banco'])){
     <title>Caixa Eletrônico</title>
 </head>
 <body>
-    <h1>Banco dos Devs</h1>
+    <h1>Banco dos Dev's</h1>
     <h3>Agência:000 </h3>
     <h3>Conta:000 </h3>
     <h4>Saldo:000 </h4>
