@@ -40,6 +40,6 @@ if(isset($_SESSION['banco']) && !empty($_SESSION['banco'])){
     <h4>Saldo: <?php echo $info['saldo']?> </h4>
 
     <a href="sair.php">Sair</a>
-
+    <hr>
 </body>
 </html>
