@@ -44,6 +44,12 @@ if(isset($_SESSION['banco']) && !empty($_SESSION['banco'])){
      tr:nth-child(even){
         background-color:#ddd;
     }
+    .deposito{
+        color:#22B305;
+    }
+    .retirada{
+        color:#FF3E37;
+    }
 
 </style>
 <body>
@@ -74,14 +80,14 @@ if(isset($_SESSION['banco']) && !empty($_SESSION['banco'])){
                     <tr>
                         <td><?php echo date('d/m/Y H:i', strtotime($item['data_operacao']));?></td>
                         <td>
-                            <?php if($item['tipo'] == '0'):?>
-                                <span color="green">R$ <?php echo $item['valor'];?></span>
-                            <?php else:?>    
-                                <span color="tomato">R$ <?php echo $item['valor'];?></span>
+                            <?php if($item['tipo'] == '0') :?>
+                                <span class="deposito"> R$ <?php echo $item['valor']; ?> </span>
+                            <?php else: ?>    
+                                <span class="retirada"> -R$ <?php echo $item['valor']; ?> </span>
                             <?php endif;?>    
                             
                         </td>
-                    </tr>'
+                    </tr>
                     <?php
                 }
             }
