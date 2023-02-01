@@ -42,21 +42,42 @@ if(isset($_POST['tipo'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <title>Caixa Eletrônico</title>
 </head>
-<body>
-    <h1>Transação</h1>
-    <form action="" method="post">
-        <Strong>Tipo de Transação:</Strong>
-        <select name="tipo" id="">
-            <option value="0">Depósito</option>
-            <option value="1">Retirada</option>
-        </select><br><br>
-        <Strong>Valor:</Strong> <br>
-        <input type="text" name="valor" pattern="[0-9,.]{1,}" id=""><br><br>
+<style>
+    body{
+        background: linear-gradient(30deg, rgba(162,219,111,1) 12%, rgba(86,163,134,1) 38%, rgba(35,52,37,1) 90%);
+        width:100vw;
+        height:100vh;
+        color:#eee;
+    }
+</style>
+<body class="container-md">
+    <h3>Transação</h3>
+    <form  class="d-flex justify-content-between" style="max-height:38px;" action="" method="post">
 
-        <input type="submit" value="Concluir">
+        <div>
+        <Strong>Tipo de Transação:</Strong>
+            <select class="btn btn-secondary dropdown-toggle" name="tipo" id="">
+                <option class="dropdown-item" value="0">Depósito</option>
+                <option class="dropdown-item" value="1">Retirada</option>
+            </select>
+        </div>
+
+        <div class="d-flex align-items-center">
+            <Strong class="d-block mx-2">Valor:</Strong> 
+            <div class="input-group" style="max-width:300px;">
+                <span class="input-group-text">$</span>
+                <input type="text" class="form-control" name="valor" pattern="[0-9,.]{1,}">
+                <span class="input-group-text">,00</span>
+            </div>  
+        </div>
+
+        <input class="btn btn-outline-light" type="submit" value="Concluir">
+        <a href="index.php" class="btn btn-outline-warning">Voltar</a>
 
     </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>
