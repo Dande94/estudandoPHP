@@ -3,7 +3,9 @@ require "index.php";
 if(isset($_POST["palavras"]) && !empty($_POST["palavras"])){
     $palavras = $_POST["palavras"];
     $arrayPalavras =explode(",",$palavras);
+    
     $textos = array();
+
     $converter = function($num) {
     switch ($num) {
         case "um":
@@ -34,6 +36,7 @@ if(isset($_POST["palavras"]) && !empty($_POST["palavras"])){
         break;
     }
     };
+
     // print_r($textos);
     $textos = array_map($converter, $arrayPalavras);
     $convertido = implode(",",$textos);
