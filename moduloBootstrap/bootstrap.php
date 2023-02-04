@@ -141,7 +141,11 @@
   </tbody>
 </table>
 <hr>
+<h5>imagens</h5>
 
+<img class="img-fluid rounded" src="4038512.jpg" alt="">
+<img class="img-fluid rounded-circle" src="4038512.jpg" alt="">
+<img class="img-fluid img-thumbnail" src="4038512.jpg" alt="">
 
 <hr>
 
