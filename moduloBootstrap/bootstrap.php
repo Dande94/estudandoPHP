@@ -13,8 +13,15 @@
     <p>
         meu primeiro teste
     </p>
-
+<hr>
+    <h4>grids</h4>
     <div class="row border">
+        <!-- 
+            xs -mobile
+            sm -tablet
+            md -desktop
+            lg -grandes monitores
+         -->
         <div class="col-sm-3 text-center">A</div>
         <div class="col-sm-3 text-center">B</div>
         <div class="col-sm-3 text-center">C</div>
@@ -25,7 +32,122 @@
         <div class="col-sm-3 text-center">F</div>
         <div class="col-sm-3 text-center">G</div>
     </div>
+    <div class="row border"">
+        <div class="col-sm-9 text-center">H</div>
+        <div class="col-sm-3 text-center">I</div>
+    </div>
+<hr>
+<h5>fonts</h5>
+<h1>14px</h1>
 
+<h3>
+  Fancy display heading
+  <small class="text-muted">With faded secondary text</small>
+</h3>
+
+<p>frase especifica pra usar a <mark> tag mark</mark></p>
+<p>frase especifica pra usar a <abbr title="framework"> tag abbr</abbr></p>
+
+<figure>
+  <blockquote class="blockquote">
+    <p>A well-known quote, contained in a blockquote element.</p>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+    Someone famous in <cite title="Source Title">Source Title</cite>
+  </figcaption>
+</figure>
+
+<figure class="text-end">
+  <blockquote class="blockquote">
+    <p>A well-known quote, contained in a blockquote element.</p>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+    Someone famous in <cite title="Source Title">Source Title</cite>
+  </figcaption>
+</figure>
+
+<p>You can use the mark tag to <mark>highlight</mark> text.</p>
+<p><del>This line of text is meant to be treated as deleted text.</del></p>
+<p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+<p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+<p><u>This line of text will render as underlined.</u></p>
+<p><small>This line of text is meant to be treated as fine print.</small></p>
+<p><strong>This line rendered as bold text.</strong></p>
+<p><em>This line rendered as italicized text.</em></p>
+
+<dl>
+    <dt>Café</dt>
+    <dd>-Bebida quente</dd>
+</dl>
+<dl>
+    <dt>Leite</dt>
+    <dd>-Bebida gelada</dd>
+</dl>
+
+<p>para especifcar código tag <code> code</code></p>
+<p>para especifcar comando tag kbd <kbd> ctrl + s</kbd> - para salvar</p>
+
+<pre>
+    tag pre
+    deixa o 
+    texto
+    do jeito 
+    que você
+    escreveu
+</pre>
+
+<p class="text-danger text-center"> texto que representa perigo</p>
+<p class="text-primary text-uppercase"> texto que representa primary</p>
+<p class="bg-danger"> texto que representativo</p>
+<p class="bg-success"> texto que representativo</p>
+<p class="bg-warning"> texto que representativo</p>
+<p class="bg-dark"> texto que representativo</p>
+<p class="bg-info"> texto que representativo</p>
+<p class="bg-primary"> texto que representativo</p>
+
+<hr>
+<h5>tables</h5>
+
+<table class="table table-striped table-hover">
+    <!-- table-striped - zebrada -->
+    <!-- table-hover - destaque  -->
+    <!-- table-striped table-hover - mix  -->
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td class="table-active">Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td class="table-active">Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+<hr>
+
+
+<hr>
+
+<hr>
+
+<hr>
 <form class="row g-3">
   <div class="col-md-4">
     <label for="validationServer01" class="form-label">First name</label>
