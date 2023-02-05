@@ -244,15 +244,13 @@
 </div>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <hr>
+<h5>Jumbotron</h5>
+<div class="jumbotron">
+  <h1>Curso de bootstrap</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, corporis quia? Magnam iste autem, unde facere esse consequuntur aut officiis repellat ea magni, nobis quibusdam ullam cum nulla beatae minima!</p>
+</div>
+
 <hr>
 <hr>
 <hr>
