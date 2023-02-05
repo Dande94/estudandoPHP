@@ -188,8 +188,53 @@
   <button class="btn btn-primary" type="button">Button</button>
   <button class="btn btn-primary" type="button">Button</button>
 </div>
+<hr>
+<h5>grupo botões</h5>
+<p>Qual emprsa voce prefere</p>
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-primary">Apple</button>
+  <button type="button" class="btn btn-primary">Microsoft</button>
+  <button type="button" class="btn btn-primary">Sony</button>
+</div>
+<br>
+<br>
+<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+  <button type="button" class="btn btn-dark">Button</button>
+  <button type="button" class="btn btn-dark">Button</button>
+  <button type="button" class="btn btn-dark">Button</button>
+  <button type="button" class="btn btn-dark">Button</button>
+  <button type="button" class="btn btn-dark">Button</button>
+  <button type="button" class="btn btn-dark">Button</button>
+</div>
+<br>
+<br>
+<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
+  <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off" checked>
+  <label class="btn btn-outline-danger" for="vbtn-radio1">Radio 1</label>
+  <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
+  <label class="btn btn-outline-danger" for="vbtn-radio2">Radio 2</label>
+  <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+  <label class="btn btn-outline-danger" for="vbtn-radio3">Radio 3</label>
+</div>
 
+<hr>
+<h5>dropdonw</h5>
 
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
 <hr>
 
 <hr>
