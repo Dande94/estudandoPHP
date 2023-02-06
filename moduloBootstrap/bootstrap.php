@@ -408,12 +408,7 @@
 </nav>
 <hr>
 <h5>navegação</h5>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="">
-      <a class="navbar-brand" href="#">
-        <img src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24">
-      </a>
-  </div>
+<nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -538,6 +533,7 @@
 
 
 <hr>
+
 <hr>
 <hr>
 <hr>
