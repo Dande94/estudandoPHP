@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body class="container-fluid">
@@ -364,6 +365,30 @@
   <a href="#" class="list-group-item">And a fifth one</a>
 </ul>
 <hr>
+<h5>abas</h5>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" aria-current="page" href="#home">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#sobre">Sobre</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " data-toggle="tab" href="#contato">Contato</a>
+  </li>
+  </ul>
+<div class="tab-content">
+  <div id="home" class="tab-pane active in fade">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, earum! Voluptatibus dolore rem quis officia? Itaque saepe ducimus sunt veritatis aut adipisci enim, nemo voluptatibus magnam quidem perferendis porro exercitationem voluptatum aliquid temporibus odit. Architecto eligendi unde maxime repudiandae in error delectus, ea necessitatibus magni velit a nesciunt eum non?
+  </div>
+  <div id="sobre" class="tab-pane fade">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora doloremque ipsa velit, dolor amet necessitatibus saepe incidunt animi, culpa, minus debitis modi aliquid omnis? Eveniet voluptates minus delectus tempore laudantium?
+  </div>
+  <div id="contato" class="tab-pane fade">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat commodi suscipit dolorem atque enim, reiciendis sequi vitae. Repudiandae voluptatibus nam itaque facere, excepturi recusandae nihil quae explicabo beatae tempora, ipsum quidem quos doloribus optio soluta veniam assumenda. Eligendi porro tempora, facere placeat autem accusantium reiciendis inventore recusandae veniam est eius repellat voluptate aliquid, enim, esse dignissimos corporis illum saepe ad facilis amet vero eum? Mollitia, nisi veniam! Explicabo ratione modi, cumque quae cum vitae officia, velit inventore maiores vel debitis!
+  </div>
+</div>
+
 <hr>
 <hr>
 <hr>
@@ -434,5 +459,6 @@
   </div>
 </form>
     <script src="bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>
