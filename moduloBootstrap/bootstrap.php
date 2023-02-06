@@ -333,7 +333,21 @@
     Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
   </div>
 </div>
+<h5>
+  collapse + cards
+</h5>
+<div class="card border-primary mb-3" style="max-width: 18rem;">
+  <a href="#teste" data-bs-toggle="collapse" class="card-header">Header</a>
+  <div id="teste" class="card-body text-primary collapse">
+    <h5 class="card-title">Primary card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
 
+<hr>
+<hr>
+<hr>
+<hr>
 <hr>
 
 <hr>
