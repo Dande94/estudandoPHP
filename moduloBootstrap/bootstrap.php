@@ -390,6 +390,22 @@
 </div>
 
 <hr>
+<h5>paginação</h5>
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">anterior</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">próxima</a></li>
+  </ul>
+</nav>
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-between">
+    <li class="page-item"><a class="page-link" href="#">anterior</a></li>
+    <li class="page-item"><a class="page-link" href="#">próxima</a></li>
+  </ul>
+</nav>
 <hr>
 <hr>
 
