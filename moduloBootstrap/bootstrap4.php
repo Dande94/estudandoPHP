@@ -47,6 +47,80 @@
         <br>
     </section>
     <hr>
+    <section class="container">
+    <div class="row ">
+            <div class="col" style="background-color:#00F;border: 1px solid #222">...</div>
+            <div class="col" style="background-color:#F0F;border: 1px solid #222">...</div>
+            <div class="col" style="background-color:#00F;border: 1px solid #222">...</div>
+            <div class="w-100"></div>
+            <div class="col" style="background-color:#F0F;border: 1px solid #222">...</div>
+            <div class="col" style="background-color:#00F;border: 1px solid #222">...</div>
+            <div class="col" style="background-color:#F0F;border: 1px solid #222">...</div>
+        </div>
+        <br>
+    <div class="row ">
+            <div class="col" style="background-color:#00F;border: 1px solid #222">...</div>
+            <div class="col" style="background-color:#F0F;border: 1px solid #222">...</div>
+            <div class="col" style="background-color:#00F;border: 1px solid #222">...</div>
+        </div>
+        <div class="row ">
+            <div class="col" style="background-color:#00F;border: 1px solid #222">...</div>
+            <div class="col" style="background-color:#F0F;border: 1px solid #222">...</div>
+            <div class="col" style="background-color:#00F;border: 1px solid #222">...</div>
+        </div>
+        <br>
+        <div class="row ">
+            <div class="col" style="background-color:#00F;border: 1px solid #222">...</div>
+            <div class="col-2" style="background-color:#F0F;border: 1px solid #222">...</div>
+            <div class="col" style="background-color:#00F;border: 1px solid #222">...</div>
+        </div>
+        <div class="row ">
+            <div class="col-2" style="background-color:#00F;border: 1px solid #222">...</div>
+            <div class="col-2" style="background-color:#F0F;border: 1px solid #222">...</div>
+            <div class="col" style="background-color:#00F;border: 1px solid #222">...</div>
+        </div>
+        <div class="row ">
+            <div class="col-2" style="background-color:#00F;border: 1px solid #222">...</div>
+            <div class="col-2" style="background-color:#F0F;border: 1px solid #222">...</div>
+            <div class="col-2" style="background-color:#00F;border: 1px solid #222">...</div>
+        </div>
+        <div class="row ">
+            <div class="col-4" style="background-color:#00F;border: 1px solid #222">...</div>
+            <div class="col-2" style="background-color:#F0F;border: 1px solid #222">...</div>
+            <div class="col-2" style="background-color:#00F;border: 1px solid #222">...</div>
+        </div>
+        <div class="row ">
+            <div class="col-4" style="background-color:#00F;border: 1px solid #222">...</div>
+            <div class="col-2" style="background-color:#F0F;border: 1px solid #222">...</div>
+            <div class="col-2" style="background-color:#00F;border: 1px solid #222">...</div>
+            <div class="col-4" style="background-color:#F0F;border: 1px solid #222">...</div>
+        </div>
+        <div class="row ">
+            <div class="col-6" style="background-color:#F0F;border: 1px solid #222">...</div>
+            <div class="col" style="background-color:#00F;border: 1px solid #222">...</div>
+            <div class="col" style="background-color:#F0F;border: 1px solid #222">...</div>
+        </div>
+        <br>
+        <div class="row ">
+            <div class="col-sm" style="background-color:#F0F;border: 1px solid #222">...</div>
+            <div class="col-sm-2" style="background-color:#00F;border: 1px solid #222">...</div>
+            <div class="col-sm-2" style="background-color:#F0F;border: 1px solid #222">...</div>
+        </div>
+        <br>
+        <div class="row ">
+            <div class="col-sm" style="background-color:#F0F;border: 1px solid #222">...</div>
+            <div class="col-2" style="background-color:#00F;border: 1px solid #222">...</div>
+            <div class="col-2" style="background-color:#F0F;border: 1px solid #222">...</div>
+        </div>
+        <br>
+        <div class="row ">
+            <div class="col-sm" style="background-color:#F0F;border: 1px solid #222">...</div>
+            <div class="col" style="background-color:#00F;border: 1px solid #222">...</div>
+            <div class="col-2" style="background-color:#F0F;border: 1px solid #222">...</div>
+        </div>
+        <br>
+    </section>
+    <hr>
     <script src="bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
     <script src="bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
 </body>
