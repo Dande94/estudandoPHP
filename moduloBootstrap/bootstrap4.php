@@ -145,8 +145,92 @@
         </div>
         <br>
     </section>
-    <hr>
-    <script src="bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
+    <section class="container">
+        <h5>alinhamentos</h5>
+        <div class="row justify-content-start" style="background-color:#F55;padding:10px">
+            <div class="col-3" style="background-color:#AA0;border: 1px solid #222">Primeira</div>
+            <div class="col-3" style="background-color:#05F;border: 1px solid #222">Segunda</div>
+            <div class="col-3" style="background-color:#590;border: 1px solid #222">Terceira</div>
+        </div>
+        <br>
+        <div class="row justify-content-center" style="background-color:#F55;padding:10px">
+            <div class="col-3" style="background-color:#AA0;border: 1px solid #222">Primeira</div>
+            <div class="col-3" style="background-color:#05F;border: 1px solid #222">Segunda</div>
+            <div class="col-3" style="background-color:#590;border: 1px solid #222">Terceira</div>
+        </div>
+        <br>
+        <div class="row justify-content-end" style="background-color:#F55;padding:10px">
+            <div class="col-3" style="background-color:#AA0;border: 1px solid #222">Primeira</div>
+            <div class="col-3" style="background-color:#05F;border: 1px solid #222">Segunda</div>
+            <div class="col-3" style="background-color:#590;border: 1px solid #222">Terceira</div>
+        </div>
+        <br>
+        <br>
+        <div class="row justify-content-around" style="background-color:#F55;padding:10px">
+            <div class="col-3" style="background-color:#AA0;border: 1px solid #222">Primeira</div>
+            <div class="col-3" style="background-color:#05F;border: 1px solid #222">Segunda</div>
+            <div class="col-3" style="background-color:#590;border: 1px solid #222">Terceira</div>
+        </div>
+        <br>
+        <div class="row justify-content-between" style="background-color:#F55;padding:10px">
+            <div class="col-3" style="background-color:#AA0;border: 1px solid #222">Primeira</div>
+            <div class="col-3" style="background-color:#05F;border: 1px solid #222">Segunda</div>
+            <div class="col-3" style="background-color:#590;border: 1px solid #222">Terceira</div>
+        </div>
+        <br>
+        <div class="row justify-content-evenly" style="background-color:#F55;padding:10px">
+            <div class="col-3" style="background-color:#AA0;border: 1px solid #222">Primeira</div>
+            <div class="col-3" style="background-color:#05F;border: 1px solid #222">Segunda</div>
+            <div class="col-3" style="background-color:#590;border: 1px solid #222">Terceira</div>
+        </div>
+        <br>
+        <div class="row justify-content-evenly" style="background-color:#F55;padding:10px">
+            <div class="col-3" style="background-color:#AA0;border: 1px solid #222">Primeira</div>
+            <div class="col-3" style="background-color:#05F;border: 1px solid #222">Segunda</div>
+            <div class="col-3" style="background-color:#590;border: 1px solid #222">Terceira</div>
+        </div>
+        <br>
+        <div class="row align-items-center" style="background-color:#F55;padding:10px;height:300px">
+            <div class="col-3" style="background-color:#AA0;border: 1px solid #222;height:50px">Primeira</div>
+            <div class="col-3" style="background-color:#05F;border: 1px solid #222;height:50px">Segunda</div>
+            <div class="col-3" style="background-color:#590;border: 1px solid #222;height:50px">Terceira</div>
+        </div>
+        <br>
+        <div class="row align-items-start" style="background-color:#F55;padding:10px;height:300px">
+            <div class="col-3" style="background-color:#AA0;border: 1px solid #222;height:50px">Primeira</div>
+            <div class="col-3" style="background-color:#05F;border: 1px solid #222;height:50px">Segunda</div>
+            <div class="col-3" style="background-color:#590;border: 1px solid #222;height:50px">Terceira</div>
+        </div>
+        <br>
+        <div class="row align-items-end" style="background-color:#F55;padding:10px;height:300px">
+            <div class="col-3" style="background-color:#AA0;border: 1px solid #222;height:50px">Primeira</div>
+            <div class="col-3" style="background-color:#05F;border: 1px solid #222;height:50px">Segunda</div>
+            <div class="col-3" style="background-color:#590;border: 1px solid #222;height:50px">Terceira</div>
+        </div>
+        <br>
+        <div class="row align-items-center justify-content-center" style="background-color:#F55;padding:10px;height:300px">
+            <div class="col-3" style="background-color:#AA0;border: 1px solid #222;height:50px">Primeira</div>
+            <div class="col-3" style="background-color:#05F;border: 1px solid #222;height:50px">Segunda</div>
+            <div class="col-3" style="background-color:#590;border: 1px solid #222;height:50px">Terceira</div>
+        </div>
+        <br>
+        <div class="row align-items-end justify-content-end" style="background-color:#F55;padding:10px;height:300px">
+            <div class="col-3" style="background-color:#AA0;border: 1px solid #222;height:50px">Primeira</div>
+            <div class="col-3" style="background-color:#05F;border: 1px solid #222;height:50px">Segunda</div>
+            <div class="col-3" style="background-color:#590;border: 1px solid #222;height:50px">Terceira</div>
+        </div>
+        <br>
+        <div class="row align-items-start justify-content-start" style="background-color:#F55;padding:10px;height:300px">
+            <div class="col-3" style="background-color:#AA0;border: 1px solid #222;height:50px">Primeira</div>
+            <div class="col-3" style="background-color:#05F;border: 1px solid #222;height:50px">Segunda</div>
+            <div class="col-3" style="background-color:#590;border: 1px solid #222;height:50px">Terceira</div>
+        </div>
+        <br>
+        
+        
+    </section>
+        <hr>
+        <script src="bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
     <script src="bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
 </body>
 </html>
