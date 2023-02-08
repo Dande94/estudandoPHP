@@ -120,6 +120,31 @@
         </div>
         <br>
     </section>
+    <section class="container">
+        <div class="row ">
+            <div class="col-sm  order-last" style="background-color:#FF0;border: 1px solid #222">Primeira</div>
+            <div class="col-sm" style="background-color:#0FF;border: 1px solid #222">Segunda</div>
+            <div class="col-sm order-first" style="background-color:#F90;border: 1px solid #222">Terceira</div>
+        </div>
+        <br>
+        <div class="row ">
+            <div class="col-sm order-4" style="background-color:#FF0;border: 1px solid #222">Primeira</div>
+            <div class="col-sm order-2" style="background-color:#0FF;border: 1px solid #222">Segunda</div>
+            <div class="col-sm order-3" style="background-color:#F90;border: 1px solid #222">Terceira</div>
+            <div class="col-sm order-1" style="background-color:#88F;border: 1px solid #222">Quarta</div>
+            <div class="col-sm order-5" style="background-color:#960;border: 1px solid #222">Quinta</div>
+        </div>
+        <br>
+        <div class="row ">
+            <!-- primeiro as desordenadas depois as ordenadas -->
+            <div class="col-sm" style="background-color:#FF0;border: 1px solid #222">Primeira</div>
+            <div class="col-sm" style="background-color:#0FF;border: 1px solid #222">Segunda</div>
+            <div class="col-sm order-2" style="background-color:#F90;border: 1px solid #222">Terceira</div>
+            <div class="col-sm order-1" style="background-color:#88F;border: 1px solid #222">Quarta</div>
+            <div class="col-sm order-3" style="background-color:#960;border: 1px solid #222">Quinta</div>
+        </div>
+        <br>
+    </section>
     <hr>
     <script src="bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
     <script src="bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
