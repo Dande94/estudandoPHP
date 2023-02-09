@@ -226,9 +226,17 @@
             <div class="col-3" style="background-color:#590;border: 1px solid #222;height:50px">Terceira</div>
         </div>
         <br>
-        
-        
     </section>
+        <hr>
+        <section>
+            <div class="container" style="height:80px">
+                <div class="img" style="height:50px;width:50px;background-color:#AA0">...</div>
+                <div class="media-body">
+                    <h5>Titulo</h5>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum iste saepe provident consectetur corporis? Laudantium ipsa nulla ad earum quisquam!</p>
+                </div>
+            </div>
+        </section>
         <hr>
         <script src="bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
     <script src="bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
