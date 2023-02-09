@@ -229,12 +229,48 @@
     </section>
         <hr>
         <section>
-            <div class="container" style="height:80px">
-                <div class="img" style="height:50px;width:50px;background-color:#AA0">...</div>
-                <div class="media-body">
-                    <h5>Titulo</h5>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum iste saepe provident consectetur corporis? Laudantium ipsa nulla ad earum quisquam!</p>
-                </div>
+            <div class="container">
+                <h1>algum texto</h1>
+                <div class="h1">algum texto</div>
+            </div>
+            <div class="container">
+                <span class="h4">algum texto</span><span class="h4 text-muted"> qualquer mutado</span>
+            </div>
+            <div class="container">
+                <p>You can use the mark tag to <mark>highlight</mark> text.</p>
+                <p><del>This line of text is meant to be treated as deleted text.</del></p>
+                <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+                <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+                <p><u>This line of text will render as underlined.</u></p>
+                <p><small>This line of text is meant to be treated as fine print.</small></p>
+                <p><strong>This line rendered as bold text.</strong></p>
+                <p><em>This line rendered as italicized text.</em></p>
+                <p><abbr title="attribute">attr</abbr></p>
+                <p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr></p>
+                <p class="lead">This is a lead paragraph. It stands out from regular paragraphs.</p>
+            </div>
+            <div>
+                <ul class="list-unstyled">
+                    <li>This is a list.</li>
+                    <li>It appears completely unstyled.</li>
+                    <li>Structurally, it's still a list.</li>
+                    <li>However, this style only applies to immediate child elements.</li>
+                    <li>Nested lists:
+                    <ul>
+                        <li>are unaffected by this style</li>
+                        <li>will still show a bullet</li>
+                        <li>and have appropriate left margin</li>
+                    </ul>
+                    </li>
+                    <li>This may still come in handy in some situations.</li>
+                </ul>   
+            </div>
+            <div>
+                <ul class="list-inline">
+                    <li class="list-inline-item">This is a list item.</li>
+                    <li class="list-inline-item">And another one.</li>
+                    <li class="list-inline-item">But they're displayed inline.</li>
+                </ul>
             </div>
         </section>
         <hr>
