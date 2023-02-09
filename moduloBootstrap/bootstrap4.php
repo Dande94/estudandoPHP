@@ -405,6 +405,47 @@
                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </section>
+        <hr>
+        <section>
+            <h5>grupo de botões</h5>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-link">Left</button>
+                <button type="button" class="btn btn-outline-primary">Middle</button>
+                <button type="button" class="btn btn-danger">Right</button>
+            </div>
+            <br>
+            <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
+                <button type="button" class="btn btn-outline-dark">Left</button>
+                <button type="button" class="btn btn-outline-dark">Middle</button>
+                <button type="button" class="btn btn-outline-dark">Right</button>
+                </div>
+                <br>
+                <div class="btn-group" role="group" aria-label="Default button group">
+                <button type="button" class="btn btn-outline-dark">Left</button>
+                <button type="button" class="btn btn-outline-dark">Middle</button>
+                <button type="button" class="btn btn-outline-dark">Right</button>
+                </div>
+                <br>
+                <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
+                <button type="button" class="btn btn-outline-dark">Left</button>
+                <button type="button" class="btn btn-outline-dark">Middle</button>
+                <button type="button" class="btn btn-outline-dark">Right</button>
+            </div>
+            <br>
+            <div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
+                <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off" checked>
+                <label class="btn btn-outline-danger" for="vbtn-radio1">Radio 1</label>
+                <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
+                <label class="btn btn-outline-danger" for="vbtn-radio2">Radio 2</label>
+                <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+                <label class="btn btn-outline-danger" for="vbtn-radio3">Radio 3</label>
+            </div>
+            <br>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button">Button</button>
+                <button class="btn btn-danger" type="button">Button</button>
+            </div>
+        </section>
         <script src="bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
     <script src="bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
 </body>
