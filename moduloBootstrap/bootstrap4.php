@@ -274,6 +274,22 @@
             </div>
         </section>
         <hr>
+        <section>
+            <h5>
+                imagens
+            </h5>
+            <img src="4038512.jpg" class="img-fluid" alt="...">
+            <img src="4038512.jpg" class="img-thumbnail" alt="...">
+            <div>
+                <img src="4038512.jpg" style="height:90px;width:90px" class="rounded float-start" alt="...">
+                <img src="4038512.jpg" style="height:90px;width:90px" class="rounded float-end" alt="...">
+            </div>
+            <figure class="figure">
+                <img src="4038512.jpg" class="figure-img img-fluid rounded" alt="...">
+                <figcaption class="figure-caption text-end">A caption for the above image.</figcaption>
+            </figure>   
+        </section>
+        <hr>
         <script src="bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
     <script src="bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
 </body>
