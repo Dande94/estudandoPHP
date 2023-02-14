@@ -26,5 +26,5 @@ imagecopyresampled($image_final, $image_original,0,0,0,0,$width,$height,$width_o
 
 header("Content-Type: image/png");
 imagepng($image_final, null);//função para exibir a imagem, 1º a imagem a ser exibida, 2º diretório ondserá salvo, como não será salvo setamos 'null', jpeg tem 3º parametro que a qualidade, pgn sala tudo com 100%;
-//imagejpeg($image_final, "mini_imagem.png");//salvando a imagem no mesmo local do onde o arquivo está sendo processado;
+//imagepng($image_final, "mini_imagem.png");//salvando a imagem no mesmo local do onde o arquivo está sendo processado;
 ?>
