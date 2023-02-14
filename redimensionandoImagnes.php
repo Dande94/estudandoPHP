@@ -25,6 +25,6 @@ imagecopyresampled($image_final, $image_original,0,0,0,0,$width,$height,$width_o
 //mosta a imagem nova 1º o espaço criado para a image, 2º a imagem que trazida pra dentro do php,3º posição X na página, 4º posição posição Y na página, 5º posição X na imagem, 6º posição Y na imagem, 7º largura nova, 8º altura nova, 9º largura orginal da imagem, 10º altura orginal da imagem;
 
 header("Content-Type: image/png");
-imagejpeg($image_final, null);//função para exibir a imagem, 1º a imagem a ser exibida, 2º diretório ondserá salvo, como não será salvo setamos 'null', jpeg tem 3º parametro que a qualidade, pgn sala tudo com 100%;
-
+imagepng($image_final, null);//função para exibir a imagem, 1º a imagem a ser exibida, 2º diretório ondserá salvo, como não será salvo setamos 'null', jpeg tem 3º parametro que a qualidade, pgn sala tudo com 100%;
+//imagejpeg($image_final, "mini_imagem.png");//salvando a imagem no mesmo local do onde o arquivo está sendo processado;
 ?>
