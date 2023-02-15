@@ -13,6 +13,33 @@
 // curl_close($ch);//fechar a conexão;
 // print_r($resposta);
 
+//----------------------chatGPT
+// URL que será requisitada
+// $url = 'https://www.example.com';
+$url ="https://swapi.dev/api/films/";
+
+// Inicia a sessão cURL
+$ch = curl_init();
+
+// Define as opções da requisição
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+// Faz a requisição e recebe a resposta
+$response = curl_exec($ch);
+
+// Verifica se houve algum erro
+if (curl_errno($ch)) {
+    echo 'Erro: ' . curl_error($ch);
+}
+
+// Fecha a sessão cURL
+curl_close($ch);
+
+// Imprime a resposta
+echo $response;
+
+
 //-----------------------Celke
 // $url =  "https://swapi.dev/api/people/";
 // // $url =  " https://swapi.dev/api/people/?page=2";
@@ -27,26 +54,4 @@
     //     echo "Nome: ".$ator->name."<br>";
     // }
     
-//--------------------------------------
-
-$url =  "https://swapi.dev/api/people/";
-// $url =  "https://swapi.dev/api/people/?page=2";
-$ch = curl_init();
-
-curl_setopt($ch, CURLOPT_URL,$url);
-// curl_setopt($ch, CURLOPT_POST, 1); 
-// curl_setopt($ch, CURLOPT_POSTFIELDS);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-$resultado = json_decode(curl_exec($ch));
-// $resultado = curl_exec($ch);
-curl_close($ch);
-// print_r($resultado);
-
-foreach($resultado as $ator){
-        print_r($ator);
-        echo "Nome: ".$ator->name."<br>";
-    }
-
-
 ?>
