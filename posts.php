@@ -16,10 +16,10 @@ class Post{
     }
 }
 
+
 $post = new Post();
 //$post->setTitulo(array());//não passa na valdação
-$post->setTitulo("Titulo da postagem");
-
-echo"Titulo: ".$post->getTitulo();
+// $post->setTitulo("Titulo da postagem");//alterar 
+// echo"Titulo: ".$post->getTitulo();//pegar o valor armazenado
 
 ?>
