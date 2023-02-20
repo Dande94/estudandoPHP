@@ -51,8 +51,24 @@ class Contato{
 
     }
 
-    private function existeEmail($email){//verificar se aquele eail existe no sistema
+    
+    //update
+    public function editar($nome, $email){
+        if($this->existeEmail($email)){//como se trata de edição só poderar editar caso o email exista por isso aqui se espera um true, pode se usar assim dentro do if também '$this->existeEmail($email)==true';
+            $sql = "UPDATE contatos SET nome = :nome WHERE email = :email";
+            $sql = $this->pdo->prepare($sql);
+            $sql->bindValue(':nome', $nome);
+            $sql->bindValue(':email', $email);
+            $sql->execute();
+            return true;
+        }else{
+            return false;
+        }
+    }
 
+
+    private function existeEmail($email){//verificar se aquele eail existe no sistema
+    
     }
 }
 
