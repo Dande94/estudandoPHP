@@ -81,7 +81,16 @@ class Contato{
     }
 
     private function existeEmail($email){//verificar se aquele eail existe no sistema
-    
+        $sql = "SELECT * FROM contatos WHERE email = :email";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(':email', $email);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){//verificação simples para ver se há o email no banco de dados para pode liberar as função de adicionar, editar, ler e excluir;
+            return true;//se existir
+        }else{
+            return false;//senão existir;
+        }
     }
 }
 
