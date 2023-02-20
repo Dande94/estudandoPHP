@@ -29,8 +29,10 @@ $contato = new Contato();//estabelecendo conexão com banco;
     <title>CRUD OO</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
-  <body>
+  <body class="container">
     <h2>Contatos</h2>
+
+    <a href="adicionar.php">[ ADICIONAR ]</a>
   <table class="table container">
   <thead>
     <tr>
@@ -50,8 +52,8 @@ $contato = new Contato();//estabelecendo conexão com banco;
             <td><?php echo $item['nome']; ?></td>
             <td><?php echo $item['email']; ?></td>
             <td>
-                <a href="">[ EDITAR ]</a>
-                <a href="">[ EXCLUIR ]</a>
+                <a href="editar.php?id=<?php echo $item['id']; ?>">[ EDITAR ]</a>
+                <a href="excluir.php?id=<?php echo $item['id']; ?>">[ EXCLUIR ]</a>
             </td>
         </tr>
     <?php endforeach; ?>

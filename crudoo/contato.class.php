@@ -68,16 +68,11 @@ class Contato{
 
     //delete
 
-    public function excluir($email){
-        if($this->existeEmail($email)){//só excluirá se oe email existir;
-            $sql = "DELETE FROM contatos WHERE email = :email";
-            $sql = $this->pdo->prepare($sql);
-            $sql->bindValue(':email', $email);
-            $sql->execute();
-            return true;
-        }else{
-            return false;
-        }
+    public function excluir($id){
+        $sql = "DELETE FROM contatos WHERE id = :id";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(':id', $id);
+        $sql->execute();
     }
 
     private function existeEmail($email){//verificar se aquele eail existe no sistema
