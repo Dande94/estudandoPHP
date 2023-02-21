@@ -6,8 +6,7 @@
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
-  <body class="container">
-
+  <body class="container py-3">
     <h5 class="card-title">Cadastro</h5>
     <div class="card mb-3" style="max-width: 90%;">
         <div class="row align-items-center g-0">
@@ -19,13 +18,13 @@
                     <form method="POST" action="adicionar_submit.php">
                         <div class="mb-2">
                             <label for="exampleInputEmail1" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-2">
                             <label for="exampleInputPassword1" class="form-label">Nome</label>
                             <input type="text" class="form-control" name="nome" id="exampleInputPassword1">
                         </div>
-                        <button type="submit" class="btn btn-outline-success">Submit</button>
+                        <button type="submit" class="btn btn-outline-success">Registrar</button>
                     </form>
                 </div>
             </div>
