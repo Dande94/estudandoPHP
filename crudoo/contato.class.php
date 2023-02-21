@@ -69,7 +69,7 @@ class Contato{
     
     //update
     public function editarTotal($email,$nome, $id){
-        if($this->existeEmail($email == false)){
+        if($this->existeEmail($email) == false){
             $sql = "UPDATE contatos SET nome = :nome, email = :email WHERE id = :id";
             $sql = $this->pdo->prepare($sql);
             $sql->bindValue(':email', $email);

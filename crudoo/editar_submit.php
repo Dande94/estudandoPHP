@@ -12,7 +12,7 @@ if(!empty($_POST['id'])){
     if(!empty($email)){
         $contato->editarTotal($email, $nome, $id);
     }
-    // header("Location: index.php");
+    header("Location: index.php");
 }
 
 
