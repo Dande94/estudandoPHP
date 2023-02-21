@@ -25,13 +25,13 @@ class Contato{
         }
     }
     //read:
-
+    //função getNome está obsoleta;
     public function getNome($email){//usarei o email pra pegar o nome pois o email é obrigatório ter o nome não, então blinda o sistema de busca;
         $sql = "SELECT nome FROM contatos WHERE email = :email";
         $sql = $this->pdo->prepare($sql);
         $sql->bindValue(':email', $email);
         $sql->execute();
-
+        
         if($sql->rowCount()>0){//caso a busca retorne mais de 0 zero resultados
             $info = $sql->fetch();//traga essa busca pra um array(tipo um objeto);
             return $info['nome'];//acesse nome dentro do array e retorne ele;
@@ -39,6 +39,21 @@ class Contato{
             return '';//caso a busca de 0 linhas retorne'vazio';
         }
     }
+    
+    public function getInfo($id){
+        $sql = "SELECT * FROM contatos WHERE id = :id";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(':id', $id); 
+        $sql->execute();
+
+        if($sql->rowCount()>0){
+            return $sql->fetch();
+        }else{
+            return array();
+        }
+
+    }
+
     public function getAll(){//pegar a lista de todos os contatos
         $sql = "SELECT * FROM contatos";//trazer tudo da tabela contatos;
         $sql = $this->pdo->query($sql);//como não tem parametro para ser tratato, executa a query sem tratamento;
@@ -53,7 +68,7 @@ class Contato{
 
     
     //update
-    public function editar($nome, $email){
+    public function editarObsoleto($nome, $email){
         if($this->existeEmail($email)){//como se trata de edição só poderar editar caso o email exista por isso aqui se espera um true, pode se usar assim dentro do if também '$this->existeEmail($email)==true';
             $sql = "UPDATE contatos SET nome = :nome WHERE email = :email";
             $sql = $this->pdo->prepare($sql);
@@ -65,6 +80,14 @@ class Contato{
             return false;
         }
     }
+    //update atulizado
+    public function editar($nome, $id){
+            $sql = "UPDATE contatos SET nome = :nome WHERE id = :id";
+            $sql = $this->pdo->prepare($sql);
+            $sql->bindValue(':nome', $nome);
+            $sql->bindValue(':id', $id);
+            $sql->execute();
+         }
 
     //delete
 
