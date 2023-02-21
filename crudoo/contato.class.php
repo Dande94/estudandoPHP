@@ -68,26 +68,27 @@ class Contato{
 
     
     //update
-    public function editarObsoleto($nome, $email){
-        if($this->existeEmail($email)){//como se trata de edição só poderar editar caso o email exista por isso aqui se espera um true, pode se usar assim dentro do if também '$this->existeEmail($email)==true';
-            $sql = "UPDATE contatos SET nome = :nome WHERE email = :email";
+    public function editarTotal($email,$nome, $id){
+        if($this->existeEmail($email == false)){
+            $sql = "UPDATE contatos SET nome = :nome, email = :email WHERE id = :id";
             $sql = $this->pdo->prepare($sql);
-            $sql->bindValue(':nome', $nome);
             $sql->bindValue(':email', $email);
+            $sql->bindValue(':nome', $nome);
+            $sql->bindValue(':id', $id);
             $sql->execute();
             return true;
         }else{
             return false;
         }
     }
-    //update atulizado
+    //update -> email travado
     public function editar($nome, $id){
-            $sql = "UPDATE contatos SET nome = :nome WHERE id = :id";
-            $sql = $this->pdo->prepare($sql);
-            $sql->bindValue(':nome', $nome);
-            $sql->bindValue(':id', $id);
-            $sql->execute();
-         }
+        $sql = "UPDATE contatos SET nome = :nome WHERE id = :id";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(':nome', $nome);
+        $sql->bindValue(':id', $id);
+        $sql->execute();
+    }
 
     //delete
 
@@ -120,3 +121,4 @@ class Contato{
 
 
 ?>
+

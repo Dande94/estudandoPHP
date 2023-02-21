@@ -36,7 +36,8 @@ if(!empty($_GET['id'])){
                         <input type="hidden" name="id" value="<?php echo $info['id'];?>">
                         <div class="mb-2">
                             <label for="" class="form-label">Email</label>
-                            <input type="email" class="form-control" readonly value="<?php echo $info['email']?>" name="email" id="" aria-describedby="emailHelp">
+                            <!-- readonly  - para disabilitar um input-->
+                            <input type="email" class="form-control" value="<?php echo $info['email']?>" name="email" id="" aria-describedby="emailHelp">                       
                         </div>
                         <div class="mb-2">
                             <label for="" class="form-label">Nome</label>
