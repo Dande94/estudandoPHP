@@ -8,13 +8,13 @@ class Usuario{
 
     private $pdo;
 
-    public function __construct($i){//construtor 
+    public function __construct($i=''){//construtor, passar argumento com opcional vazio;
+        try{
+            $this->pdo = new PDO("mysql:dbname=blog2;host=localhost","root","");
+        }catch(PDOException $e){
+            echo "FALHA: ".$e->getMessage();
+        }
         if(!empty($i)){
-            try{
-                $this->pdo = new PDO("mysql:dbname=blog2;host=localhost","root","");
-            }catch(PDOException $e){
-                echo "FALHA: ".$e->getMessage();
-            }
             $sql = "SELECT *  FROM usuarios WHERE id = ?";
             $sql = $this->pdo->prepare($sql);
             $sql->execute(array($i));
@@ -60,9 +60,9 @@ class Usuario{
         if(!empty($this->id)){//verificador de variavel vazia;
             //update
             $sql = "UPDATE usuarios SET
-            email = '?',
-            senha = '?',
-            nome = '?'
+            email = ?,
+            senha = ?,
+            nome = ?
             WHERE id =?";
             $sql = $this->pdo->prepare($sql);
             $sql->execute(array(
@@ -73,9 +73,9 @@ class Usuario{
         }else{
             //registro
             $sql = "INSERT INTO usuarios SET
-            email = '?',
-            senha = '?',
-            nome = '?'";
+            email = ?,
+            senha = ?,
+            nome = ?";
             $sql = $this->pdo->prepare($sql);
             $sql->execute(array(
             $this->email,
