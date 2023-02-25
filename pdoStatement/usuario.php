@@ -45,7 +45,7 @@ class Usuario{
 
     public function atualizar($nome, $email, $senha, $id){
         //comando:
-        $sql= $this->db->prepare("UPDATE usuarios SET nome = ?, email = ?, senha = ?, id = ?");
+        $sql= $this->db->prepare("UPDATE usuarios SET nome = ?, email = ?, senha = ? WHERE  id = ?");
         //tratamento dos dados recebido diretamente no execute, lembra de manter as a ordem da linha de comando igual a declaraão das variveis;
         $sql->execute(array($nome,$email,sha1($senha),$id));//array com as informações;
     }
