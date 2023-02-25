@@ -6,5 +6,5 @@ $u = new Usuario();//instanciando a classe
 // print_r($res);//printar as informações em formato de array;
 
 //inserir registros:
-$u->inserir("Anderson Nunes", "emaildeexemplo@eemplo.com","123");
+// $u->inserir("Anderson Nunes", "emaildeexemplo@eemplo.com","123");
 ?>
