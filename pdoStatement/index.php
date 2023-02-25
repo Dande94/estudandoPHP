@@ -8,5 +8,6 @@ $u = new Usuario();//instanciando a classe
 //inserir registros:
 // $u->inserir("Anderson Nunes", "emaildeexemplo@eemplo.com","123");
 //atualizar:
-$u->atualizar("Isabel Maria", "exemplo2@exemplo.com","456",47);
+// $u->atualizar("Isabel Maria", "exemplo2@exemplo.com","456",47);
+$u->excluir(47);
 ?>

@@ -49,6 +49,16 @@ class Usuario{
         //tratamento dos dados recebido diretamente no execute, lembra de manter as a ordem da linha de comando igual a declaraão das variveis;
         $sql->execute(array($nome,$email,sha1($senha),$id));//array com as informações;
     }
+
+    public function excluir($id){
+        //comando
+        $sql = $this->db->prepare("DELETE FROM usuarios WHERE id =?");
+        //tratamento das informações recebidas
+        $sql->bindValue(1,$id);//aqui o '1' representa o primeiro '?', caso venha ater mais de um '?' vai seguindo a sequência de acordo com a varivel desejada a ser setada ali;
+
+        //executar comando
+        $sql->execute();
+    }
 }
 
 ?>
