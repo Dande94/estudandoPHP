@@ -12,7 +12,11 @@ require_once "usuario.php";
 $usuario = new Usuario(13);
 // echo "O nome do usuario é: ".$usuario->getNome();
 //atualizar
-$usuario->setNome("Fulanissimo de Tal");
-$usuario->salvar();
-echo "<script>alert('Usuário atualizado com sucesso!')</script>";
+// $usuario->setNome("Fulanissimo de Tal");
+// $usuario->salvar();
+// echo "<script>alert('Usuário atualizado com sucesso!')</script>";
+//-----
+//deletar
+$usuario->delete();
+echo "<script>alert('Usuário deletado com sucesso!')</script>";
 ?>

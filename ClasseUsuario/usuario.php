@@ -83,6 +83,10 @@ class Usuario{
             $this->nome));
         }
     }
-
+    public function delete(){
+        $sql = "DELETE FROM usuarios WHERE id = ?";
+        $sql = $this->pdo->prepare($sql);
+        $sql->execute(array($this->id));
+    }
 }
 ?>
