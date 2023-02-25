@@ -21,6 +21,13 @@ class Usuario{
         $sql->bindValue(":id", $id);
         //executar o comando
         $sql->execute();
+
+        //construção do resultado;
+        $array = array();//declarando array vazio para receber resultado da busca;
+        if($sql->rowCount() > 0){
+            $array = $sql->fetch();
+        }
+        return $array;
     }
 }
 
