@@ -25,9 +25,9 @@ class Usuario{
         //construção do resultado;
         $array = array();//declarando array vazio para receber resultado da busca;
         if($sql->rowCount() > 0){
-            $array = $sql->fetch();
+            $array = $sql->fetch();//o retorno volta como um array;
         }
-        return $array;
+        return $array;//retornando o array para o index;
     }
 }
 
