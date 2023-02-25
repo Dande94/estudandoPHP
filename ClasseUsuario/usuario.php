@@ -1,7 +1,5 @@
 <?php
 
-require_once "index.php";
-
 class Usuario{
     private $id;
     private $email;
@@ -46,7 +44,7 @@ class Usuario{
     
     //senha:
     public function setSenha($s){
-        $this->senha = $s;
+        $this->senha = sha1($s);
     }
     
     //nome:
@@ -57,7 +55,34 @@ class Usuario{
         return $this->nome;
     }
 
-
+    //salvar:
+    public function salvar(){//caso a varivel venha com algum valor irá fazer update, caso está vazia então irá registrar um novo usuario;
+        if(!empty($this->id)){//verificador de variavel vazia;
+            //update
+            $sql = "UPDATE usuarios SET
+            email = '?',
+            senha = '?',
+            nome = '?'
+            WHERE id =?";
+            $sql = $this->pdo->prepare($sql);
+            $sql->execute(array(
+            $this->email,
+            $this->senha,
+            $this->nome,
+            $this->id));
+        }else{
+            //registro
+            $sql = "INSERT INTO usuarios SET
+            email = '?',
+            senha = '?',
+            nome = '?'";
+            $sql = $this->pdo->prepare($sql);
+            $sql->execute(array(
+            $this->email,
+            $this->senha,
+            $this->nome));
+        }
+    }
 
 }
 ?>
