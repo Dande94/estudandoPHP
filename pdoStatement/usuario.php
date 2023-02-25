@@ -13,6 +13,15 @@ class Usuario{
             echo "FALHA: ".$e->getMessage();
         }
     }
+
+    public function selecionar($id){
+        //o comando:
+        $sql = $this->db->prepare("SELECT * FROM usuarios WHERE id = :id");
+        //tratamento da variavel:
+        $sql->bindValue(":id", $id);
+        //executar o comando
+        $sql->execute();
+    }
 }
 
 ?>
