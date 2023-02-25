@@ -29,6 +29,19 @@ class Usuario{
         }
         return $array;//retornando o array para o index;
     }
+
+    public function inserir($nome,$email,$senha){
+        //comando de inserção:
+        $sql = $this->db->prepare("INSERT INTO usuarios SET nome = :nome, email = :email, senha = :senha");
+
+        //comando de tratamento das informações recebidas;
+        //o bindValue seta o valor da vairavel ao apelidona query, o bindParam associa a variavel ao apelido, se posterioemente a varivel trocar de valor o apelido tambem troca, diferente o bindValue que seta o valor, e ele que fica alocado no apelido;
+        $sql->bindParam(":nome", $nome);
+        $sql->bindParam(":email", $email);
+        $sql->bindValue(":senha", sha1($senha));//aqui precisa ser associado ao valor por estar passando um SHA1
+        //comando de execução:
+        $sql->execute();
+    }
 }
 
 ?>
