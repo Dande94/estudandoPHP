@@ -11,7 +11,7 @@ try{
 
 
 //loop para 1000 registros
-// for($i= 19; $i<=1000;$i++){
+// for($i= 0; $i<=1000;$i++){
 //     $randomTimestamp = rand(1, time()); // Gera um timestamp aleatório entre 1 e o timestamp atual
 //     $randomDate = new DateTime();
 //     $randomDate->setTimestamp($randomTimestamp);
@@ -28,6 +28,28 @@ try{
 //     $sql->bindValue(':autor',$autor);
 //     $sql->execute();  
 // }
+
+//traz a quantidade de post do banco de dados
+$total=0;
+$sql="SELECT COUNT(*) as c FROM posts";
+$sql= $pdo->query($sql);
+$sql=$sql->fetch();
+$total=$sql['c'];
+$paginas = $total / 10;
+//echo $total;
+//exit;//ao aplicar o exit no meio do código ele irá parar o código naquela linha;
+
+
+//percorre o banco de dados
+$p=0;
+$sql = "SELECT * FROM posts LIMIT $p,10";
+$sql = $pdo->query($sql);
+if($sql->rowCount() > 0){
+    foreach($sql->fetchAll() as $item){
+        echo $item['id'].' - '.$item['titulo'].'</br>';
+    }
+}
+
 
 
 ?>
