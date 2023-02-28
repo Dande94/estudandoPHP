@@ -11,14 +11,14 @@ if(!empty($_POST['email'])){
         $sql = $sql->fetch();
         $id = $sql['id'];
         $token = md5(time().rand(0,99999).rand(0,99999));//gerador de token com valor aleatório;
-        $sql = "INSERT INTO usuarios_token SET id_user = :id_user, hash = :hash, experid_in = :experid_in";
+        $sql = "INSERT INTO usuarios_token SET id_user = :id_user, hash = :hash, expired_in = :experid_in";
         $sql = $pdo->prepare($sql);
         $sql->bindValue(':id_user', $id);
         $sql->bindValue(':hash', $token);
         $sql->bindValue(':experid_in', date('Y-m-d H:i', strtotime('+2 hours')));
         $sql->execute();
 
-        $link="http://localhost/esqueciSenha/redefinir.php?token=".$token;
+        $link="http://localhost/b7web/EstudandoPHP/esqueciSenha/redefinir.php?token=".$token;
         $msg ="Acess o seu email e clique no link pra redefinir a sua senha:<br>".$link;
 
         $assunto = "Redefinição de senha";
