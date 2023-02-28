@@ -11,16 +11,18 @@ if(!empty($_POST['email'])){
         $sql = $sql->fetch();
         $id = $sql['id'];
         $token = md5(time().rand(0,99999).rand(0,99999));//gerador de token com valor aleatório;
-        $sql = "INSERT INTO usuarios_token SET id_user = :id_user, hash = :hash, expired_in = :experid_in";
+        $sql = "INSERT INTO usuarios_token SET id_user = :id_user, hash = :hash, expired_in = :experid_in";//armazena  o id do usuario para relacionar com a tabela usuario e aplica um tempo de expiração;
         $sql = $pdo->prepare($sql);
         $sql->bindValue(':id_user', $id);
         $sql->bindValue(':hash', $token);
-        $sql->bindValue(':experid_in', date('Y-m-d H:i', strtotime('+2 hours')));
+        $sql->bindValue(':experid_in', date('Y-m-d H:i', strtotime('+2 hours')));//gerador da data de expiração;
         $sql->execute();
 
-        $link="http://localhost/b7web/EstudandoPHP/esqueciSenha/redefinir.php?token=".$token;
-        $msg ="Acess o seu email e clique no link pra redefinir a sua senha:<br>".$link;
+        $link="http://localhost/b7web/EstudandoPHP/esqueciSenha/redefinir.php?token=".$token;//site de trocar senha com o token de validação;
 
+        $msg ="Acess o seu email e clique no link pra redefinir a sua senha:<br>".$link;//link orientativo
+
+        //estrutura de envio de email;
         $assunto = "Redefinição de senha";
         $headers =  'From: seuemail@seusite.com.br'."\r\n".
                     "X-Mailer:PHP/".phpversion();
