@@ -1,3 +1,4 @@
 Módulo 12-
 Aula #05: Envio de E-mail;
 Aula #36: Cadastro de Aprovação
+Aula #37: Esqueci a Senha
