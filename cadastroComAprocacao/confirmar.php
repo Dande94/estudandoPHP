@@ -6,3 +6,4 @@ if(!empty($h)){//caso não venha vazio;
     
     echo "<h2>Cadastro confirmado com Sucesso!!</h2>";
 }
+//projeto ainda precisa ser testado; pois devo aprender usar ferramenta de deploy e db online;
