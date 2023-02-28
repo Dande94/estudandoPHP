@@ -1,6 +1,9 @@
 <?php
 try{
-    $this->pdo = new PDO("mysql:dbname=testeprorim;host=localhost","root","");
+    $dsn="mysql:dbname= cadastroaprovacao;host=localhost";
+    $dbuser="root";
+    $dbpass="";
+    $this->pdo = new PDO($dsn,$dbuser,$dbpass);
 }catch(PDOException $e){
-    echo "FALHA: ".$e->getMessage();
+    die($e->getMessage());
 }
