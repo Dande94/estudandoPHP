@@ -18,6 +18,9 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])){
 
     //função mail();
     mail($email, $assunto, $msg, $headers);//A função mail() do PHP é usada para enviar e-mails. Ela aceita vários parâmetros,1ºparam o endereço de e-mail do destinatário,2ºparam o assunto do e-mail,3ºparam o corpo da mensagem e 4ºparam cabeçalhos opcionais.
+
+    echo "<h2>OK! Confirme seu Cadastro agora</h2>";//mensagem de orientação;
+    exit;//para parar o programa e não mostrar o formulário novamente;
 }
 
 ?>
