@@ -18,7 +18,17 @@ if(!empty($_POST['email'])){
         $sql->bindValue(':experid_in', date('Y-m-d H:i', strtotime('+2 hours')));
         $sql->execute();
 
-        echo "Acess o seu email e clique no link pra redefinir a sua senha";
+        $link="http://localhost/esqueciSenha/redefinir.php?token=".$token;
+        $msg ="Acess o seu email e clique no link pra redefinir a sua senha:<br>".$link;
+
+        $assunto = "Redefinição de senha";
+        $headers =  'From: seuemail@seusite.com.br'."\r\n".
+                    "X-Mailer:PHP/".phpversion();
+
+        // mail($email,$assunto,$msg,$headers);
+        echo $msg;
+        exit;
+
 
     }
 }
