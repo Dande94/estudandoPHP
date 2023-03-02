@@ -11,7 +11,7 @@ require_once "conexaoBanco.php";
 </head>
 <style>
     table{
-        width:70%;
+        width:90%;
         border: 2px solid #999;
     }
     th{
@@ -20,7 +20,7 @@ require_once "conexaoBanco.php";
     }
     span a{
         padding: 2px; 
-        margim-left: 5px;
+        margin-left: 5px;
     }
     span a,
     a{
