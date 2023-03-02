@@ -1,0 +1,1 @@
+ <button><?php echo $lang->get('BUY') ?></button>
