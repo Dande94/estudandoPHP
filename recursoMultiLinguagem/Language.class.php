@@ -31,7 +31,7 @@ class Language{
             }
     }
     public function getLanguage(){
-        return $this->l;
+        return $this->l;//armazena a linguagem vigente na session;
     }
     public function get($word, $return = false){//$word traz uma palavra para ser traduzida, 
         $text= $word;//a palavra enviada via argumento será armazenada em $text;

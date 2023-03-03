@@ -25,3 +25,19 @@ Linguagem Definida:<?php echo $lang->getLanguage(); ?>
  <?php echo $lang->get('NAME');?>:Anderson Nunes -->
 <hr>
  categoria: <?php $lang->get('CATEGORIA_PHOTO');?>
+ <br>
+ categoria: <?php $lang->get('CATEGORIA_CLOTHES');?>
+ <hr>
+<?php
+    $sql = "SELECT id,(SELECT valor FROM lang WHERE lang.lang = :lang AND lang.nome = categorias.lang_item) AS nome FROM categorias";//associando tabelas
+    $sql = $pdo->prepare($sql);
+    $sql->bindValue(':lang', $lang->getLanguage());
+    $sql->execute();
+
+    //automatiza a buscar por palavras no banco de dados;
+    if($sql->rowCount()>0){
+        foreach($sql->fetchAll() as $categoria){
+            echo $categoria['nome'].'<br>';
+        }
+    }
+?>
