@@ -5,7 +5,7 @@ session_start();// o idioma será salvo na sessão;
 if(!empty($_GET['lang'])){
     $_SESSION['lang'] = $_GET['lang'];//capturando a lang passada via url, e setando na session;
 }
-
+require "conexaoBanco.php";
 require "Language.class.php";
  $lang = new Language();
 
@@ -19,4 +19,9 @@ Linguagem Definida:<?php echo $lang->getLanguage(); ?>
 <hr>
 
  <button><?php echo $lang->get('BUY');?></button>
- <a href=""><?php echo $lang->get('LOGOUT');?></a>
+ <!-- <a href=""><?php echo $lang->get('LOGOUT');?></a>
+
+ <hr>
+ <?php echo $lang->get('NAME');?>:Anderson Nunes -->
+<hr>
+ categoria: <?php $lang->get('CATEGORIA_PHOTO');?>
