@@ -20,8 +20,19 @@ class Language{
     public function getLanguage(){
         return $this->l;
     }
-    public function get($word, $return = false){
+    public function get($word, $return = false){//$word traz uma palavra para ser traduzida, 
+        $text= $word;//a palavra enviada via argumento será armazenada em $text;
 
+        //verificar se a palavra existe no dicionário, caso ela não exista, ela irá retorna sem tradução;
+        if(isset($this->ini[$word])){//verifica a existencia no array;
+            $text =  $this->ini[$word];//caso verdadeiro, a tradução será retornada a página
+        }
+
+        if($return){//ainda não entendi isso aqui;
+            return $text;
+        }else{
+            echo $text;
+        }
     }
 }
 

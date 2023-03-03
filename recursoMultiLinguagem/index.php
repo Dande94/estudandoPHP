@@ -19,3 +19,4 @@ Linguagem Definida:<?php echo $lang->getLanguage(); ?>
 <hr>
 
  <button><?php echo $lang->get('BUY');?></button>
+ <a href=""><?php echo $lang->get('LOGOUT');?></a>
