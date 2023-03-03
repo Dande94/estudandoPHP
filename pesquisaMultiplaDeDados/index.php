@@ -12,6 +12,7 @@
         <input type="text" name="campo" placeholder="Email ou CPF" id="">
         <input type="submit" value="Pesquisar">
     </form>
+    <hr>
 </body>
 </html>
 <?php
@@ -28,14 +29,17 @@ if(!empty($_GET['campo'])){
         exit;
     }
 
-    $sql = "SELECT * FROM usuarios WHERE (email = :email) OR (cpf = :cpf)";
-    $sql = $this->pdo->prepare($sql);
+    $sql = "SELECT * FROM usuarios WHERE (email = :email) OR (cpf = :cpf)";//caso queira adicionar mais formas de buscar adicionar mais um 'OR' e a condição;
+    $sql = $pdo->prepare($sql);
     $sql->bindValue(':email',$campo);
     $sql->bindValue(':cpf',$campo);
     $sql->execute();
 
     if($sql->rowCount() > 0 ){
-
+        $sql = $sql->fetch();
+        echo "Nome: ".$sql['nome'];
+    }else{
+        echo "Não encontrado";
     }
 }
 ?>
