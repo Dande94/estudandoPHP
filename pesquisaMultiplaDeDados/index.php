@@ -30,8 +30,8 @@ if(!empty($_GET['campo'])){
     }
 
     $sql = "SELECT * FROM usuarios WHERE (email = :email) OR (cpf = :cpf)";//caso queira adicionar mais formas de buscar adicionar mais um 'OR' e a condição;
-    $sql = $pdo->prepare($sql);
-    $sql->bindValue(':email',$campo);
+    $sql = $pdo->prepare($sql);// a variavél recebe o mesmo nome nas duas porque, funciona como uma economia de armazanagem, onde antes guarda apenas a query SQL agora passa tambem a armazenar a query e ainda se torna uma  classe do metodo PDO;
+    $sql->bindValue(':email',$campo); // como $sql é estancia a Classe PDO, pode se chamar funções internas como bindValue usando a sintax ' -> ';
     $sql->bindValue(':cpf',$campo);
     $sql->execute();
 

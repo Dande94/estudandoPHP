@@ -27,7 +27,7 @@ try{//usando o 'try' para iniciar uma aplicação que externa ao arquivo nesse c
     //echo "autor deletado com sucesso";
     
     //--
-    $pdo->query($sql);//como não será retornado nada, pode apenas executa o pdo
+    $pdo->query($sql);//como não será retornado nada, pode apenas executa o pdo // a variavél recebe o mesmo nome nas duas porque, funciona como uma economia de armazanagem, onde antes guarda apenas a query SQL agora passa tambem a armazenar a query e ainda se torna uma  classe do metodo PDO;
     //$sql = $pdo->query($sql);//rescrevendo o comando do banco de dados com a conexão com o banco de dados;caso necessi retorna algo;
 
 

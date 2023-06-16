@@ -9,13 +9,13 @@ tr:nth-child(odd){
     background: #F59289;
 }
 td{
-    padding:0.5rem;
+    padding:0.5em;
     text-align:center;
 }
 
 </style>
 <body>
-    <table border='1'>
+    <table >
     <?php
     for($i = 1; $i <=10; $i++){
         echo "<tr>";

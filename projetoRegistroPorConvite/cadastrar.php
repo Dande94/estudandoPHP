@@ -4,18 +4,22 @@ require_once "conexaoBanco.php";
 
 if(!empty($_GET['codigo'])){
     $codigo = addslashes($_GET['codigo']);
-    $sql = "SELECT * FROM usuarios WHERE codigo = '$codigo'";
+    $sql = "SELECT * FROM usuarios WHERE codigo = '$codigo' AND contagem < 5";
     $sql =$pdo->query($sql);
 
+    
     if($sql->rowcount()==0){
         header("Location: login.php");
         exit;
     }
-
+    
 }else{
     header("Location: login.php");
     exit;
 }
+
+$sqlSomatorio = "UPDATE usuarios SET contagem = contagem + 1 WHERE codigo = '$codigo' ";
+$sqlSomatorio = $pdo->query($sqlSomatorio);
 
 if(!empty($_POST['email'])){
     $email = $_POST['email'];
@@ -36,6 +40,7 @@ if(!empty($_POST['email'])){
         $sql -> bindValue(':codigo',$codigo);
         $sql -> execute();
 
+
         unset($_SESSION['logado']);
         header("Location: index.php");
         exit;
@@ -44,6 +49,7 @@ if(!empty($_POST['email'])){
 
 }
 
+//DESAFIO DA VERIFICAÇÃO DE NO MÁXIMO 5 CONVITES - CONCLUÍDA.
 
 ?>
 <!DOCTYPE html>

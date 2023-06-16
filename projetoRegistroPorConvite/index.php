@@ -33,6 +33,6 @@ if($sql->rowCount() > 0){
 <body>
     <h1>Área Interna do sistema</h1>
     <span><h3>Usuário: <?php echo $email;?> - <a href="sair.php">Sair</a></h3>
-    <p>LInk: http://127.0.0.1/b7web/EstudandoPHP/projetoRegistroPorConvite/cadastrar.php?codigo=<?php echo $codigo; ?></p>
+    <p>Link:</p><a href="http://127.0.0.1/b7web/EstudandoPHP/projetoRegistroPorConvite/cadastrar.php?codigo=<?php echo $codigo; ?>" target="_blank"> http://127.0.0.1/b7web/EstudandoPHP/projetoRegistroPorConvite/cadastrar.php?codigo=<?php echo $codigo; ?></a>
 </body>
 </html>
