@@ -1,0 +1,7 @@
+RewriteEngine On 
+RewriteCond %{REQUEST_FILENAME} !-f
+# negar arquivos reais
+RewriteCond %{REQUEST_FILENAME} !-d
+# negar diretórios
+RewriteRule ^(.*)$ /index.php?q=$1 [L]
+# expressão que irá especificar como irá funcionar a URL;

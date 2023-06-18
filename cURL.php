@@ -16,10 +16,12 @@
 //----------------------chatGPT
 // URL que será requisitada
 // $url = 'https://www.example.com';
-$url ="https://swapi.dev/api/films/";
 
+$url ="https://swapi.dev/api/films/";
 // Inicia a sessão cURL
 $ch = curl_init();
+
+
 
 // Define as opções da requisição
 curl_setopt($ch, CURLOPT_URL, $url);
@@ -37,7 +39,8 @@ if (curl_errno($ch)) {
 curl_close($ch);
 
 // Imprime a resposta
-echo $response;
+// echo $response;
+print_r($response);
 
 
 //-----------------------Celke
