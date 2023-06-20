@@ -39,11 +39,11 @@ class Post{
     }
 
     public function addComentarios($msg){
-        $this->comentarios[]=$msg;//ao adicionar '[]' no final da variavelcomentários, meio que adiciona chaves de array nesse, mito parecido com um push;
+        $this->comentarios[]=$msg;//ao adicionar '[]' no final da variavelcomentários, meio que adiciona chaves de array nesse, muito parecido com um push;
         $this->contarComentarios();//chamada da função 
     }
 
-    private function contarComentarios(){//esta privado pq sode rodar dentro do próprio objeto
+    private function contarComentarios(){//esta privado pq pode rodar dentro do próprio objeto
         $this->qtComentarios = count($this->comentarios);//irá contar quantos elementos tem dentro do array comtários e será atribuido ao qtComtarios;
     }
 }

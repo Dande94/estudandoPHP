@@ -27,5 +27,5 @@ $cachorro = new Cachorro();
 $cachorro->getNome();
 
 
-//segundo bonieky polimorfimo é quando subtituo uma função herdada pela função próprio objeto;
+//segundo bonieky polimorfimo é quando substituo uma função herdada pela função próprio objeto;
 ?>
