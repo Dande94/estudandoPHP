@@ -69,7 +69,7 @@ class Contato{
     
     //update
     public function editarTotal($email,$nome, $id){
-        if($this->existeEmail($email) == false){
+        if($this->existeEmail($email)){//se email existir fará a edição(update)
             $sql = "UPDATE contatos SET nome = :nome, email = :email WHERE id = :id";
             $sql = $this->pdo->prepare($sql);
             $sql->bindValue(':email', $email);
@@ -105,6 +105,7 @@ class Contato{
         $sql->execute();
     }
 
+    //verificador (função auxiliar)
     private function existeEmail($email){//verificar se aquele email existe no sistema
         $sql = "SELECT * FROM contatos WHERE email = :email";
         $sql = $this->pdo->prepare($sql);
