@@ -1,9 +1,9 @@
 <?php
 class Calculadora{
-    private $n;//valor que sofrerá as opeções;
+    private $n;//valor que sofrerá as operações, somente utilizavel dentro da própria classe;
 
     public function __construct($numeroInicial){//atribuindo valor passado no instaciamento para dentro da variavel $n;
-        $this->n = $numeroInicial;
+        $this->n = $numeroInicial;//a variavel 'n' se tornará um valor padrão em todos os calcúlos;
     }
 
     //operações matemáticas
@@ -30,7 +30,8 @@ class Calculadora{
 
 }
 
-$calc = new Calculadora(10);
+$calc = new Calculadora(12);//numero que irá pra dentro do construtor, e assim se tornando padrão no funcionamento da classe;
+
 // $calc->somar(2)->subtrair(3)->multiplicar(5)->dividir(2);
 // $resultado = $calc->resultado();
 // echo "O resultado: ".$resultado;
