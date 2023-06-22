@@ -9,7 +9,7 @@ class Calculadora{
     //operações matemáticas
     public function somar($n1){
         $this->n += $n1;
-        return $this;
+        return $this;//retorna o próprio objeto;
     }
     public function subtrair($n1){
         $this->n -= $n1;
@@ -25,7 +25,7 @@ class Calculadora{
     }
     //resultado
     public function resultado(){
-        return $this->n;
+        return $this->n;// retorna o resultado;
     }
 
 }
@@ -36,7 +36,7 @@ $calc = new Calculadora(12);//numero que irá pra dentro do construtor, e assim 
 // $resultado = $calc->resultado();
 // echo "O resultado: ".$resultado;
 echo "<br>";
-$calc->somar(2)->somar(3)->somar(5)->somar(2);
+$calc->somar(2)->subtrair(8)->somar(5)->multiplicar(2);// os parametros na chamdas das funções servem como o numero que irá aplicar a alteração no numero inicial; (funções aninhadas)
 $resultado = $calc->resultado();
 echo "O resultado: ".$resultado;
 
