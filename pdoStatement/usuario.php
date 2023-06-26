@@ -25,7 +25,7 @@ class Usuario{
         //construção do resultado;
         $array = array();//declarando array vazio para receber resultado da busca;
         if($sql->rowCount() > 0){
-            $array = $sql->fetch();//o retorno volta como um array;
+            $array = $sql->fetch();//o retorno volta como um array(esse array tem estrutura de objeto); foi usado fetch e não fetchAll, pois está se aguardando apenas 1 resultado;
         }
         return $array;//retornando o array para o index;
     }
