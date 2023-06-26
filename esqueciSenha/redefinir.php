@@ -28,7 +28,6 @@ if(!empty($_GET['token'])){
             $sql = $pdo->prepare($sql);
             $sql->bindValue(":hash", $token);
             $sql->execute();
-
             echo "Senha Alterada com Sucesso!!";
             exit;
         }

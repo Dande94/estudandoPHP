@@ -1,0 +1,1 @@
+<a href="esqueci.php" target="_blank" rel="noopener noreferrer">Redefinir a Senha</a>
