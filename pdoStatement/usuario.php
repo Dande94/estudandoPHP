@@ -15,7 +15,7 @@ class Usuario{
     }
 
     public function selecionar($id){
-        //o comando:
+        //o comando de procura:
         $sql = $this->db->prepare("SELECT * FROM usuarios WHERE id = :id");
         //tratamento da variavel:
         $sql->bindValue(":id", $id);
@@ -35,7 +35,7 @@ class Usuario{
         $sql = $this->db->prepare("INSERT INTO usuarios SET nome = :nome, email = :email, senha = :senha");
 
         //comando de tratamento das informações recebidas;
-        //o bindValue seta o valor da vairavel ao apelidona query, o bindParam associa a variavel ao apelido, se posterioemente a varivel trocar de valor o apelido tambem troca, diferente o bindValue que seta o valor, e ele que fica alocado no apelido;
+        //o bindValue seta o valor da vairavel ao apelido na query, o bindParam associa a variavel ao apelido, se posterioemente a varivel trocar de valor o apelido tambem troca, diferente do bindValue que seta o valor, e ele que fica alocado no apelido;
         $sql->bindParam(":nome", $nome);
         $sql->bindParam(":email", $email);
         $sql->bindValue(":senha", sha1($senha));//aqui precisa ser associado ao valor por estar passando um SHA1
@@ -44,14 +44,14 @@ class Usuario{
     }
 
     public function atualizar($nome, $email, $senha, $id){
-        //comando:
+        //comando de update:
         $sql= $this->db->prepare("UPDATE usuarios SET nome = ?, email = ?, senha = ? WHERE  id = ?");
         //tratamento dos dados recebido diretamente no execute, lembra de manter as a ordem da linha de comando igual a declaraão das variveis;
         $sql->execute(array($nome,$email,sha1($senha),$id));//array com as informações;
     }
 
     public function excluir($id){
-        //comando
+        //comando de delete:
         $sql = $this->db->prepare("DELETE FROM usuarios WHERE id =?");
         //tratamento das informações recebidas
         $sql->bindValue(1,$id);//aqui o '1' representa o primeiro '?', caso venha ater mais de um '?' vai seguindo a sequência de acordo com a varivel desejada a ser setada ali;
@@ -60,5 +60,7 @@ class Usuario{
         $sql->execute();
     }
 }
+//nessa aula basicamente foi mostrado todos os tipos de construção para CRUD com o PDO Statement;
+
 
 ?>
