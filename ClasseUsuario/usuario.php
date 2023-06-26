@@ -1,6 +1,7 @@
 <?php
 
 class Usuario{
+    //propriedades da classe;
     private $id;
     private $email;
     private $senha;
@@ -8,19 +9,20 @@ class Usuario{
 
     private $pdo;
 
-    public function __construct($i=''){//construtor, passar argumento com opcional vazio;
+    public function __construct($i=''){//construtor, passar argumento com opcional vazio, onde depois haverá verificação se está vazia para tomada de decisão do que fazer com ela;
         try{
             $this->pdo = new PDO("mysql:dbname=blog2;host=localhost","root","");
         }catch(PDOException $e){
             echo "FALHA: ".$e->getMessage();
         }
-        if(!empty($i)){
+        if(!empty($i)){//se a variavel não esiver vazia
             $sql = "SELECT *  FROM usuarios WHERE id = ?";
             $sql = $this->pdo->prepare($sql);
             $sql->execute(array($i));
-
+            
             if($sql->rowCount() > 0){
                 $data = $sql->fetch();
+                //é usado o 'this' na construção das variaveis, para manter a coêrencia de que as variaveis que estão recebendo o dados são de dentro da propria classe e estão privadas;
                 $this->id=$data['id'];
                 $this->nome=$data['nome'];
                 $this->email=$data['email'];
@@ -28,7 +30,8 @@ class Usuario{
             }
         }
     }
-
+    
+    //metodos getter e setter:
     //id:
     public function getID(){
         return $this->id;
@@ -60,27 +63,29 @@ class Usuario{
         if(!empty($this->id)){//verificador de variavel vazia;
             //update
             $sql = "UPDATE usuarios SET
-            email = ?,
-            senha = ?,
-            nome = ?
-            WHERE id =?";
+                email = ?,
+                senha = ?,
+                nome = ?
+                WHERE id =?";
             $sql = $this->pdo->prepare($sql);
             $sql->execute(array(
-            $this->email,
-            $this->senha,
-            $this->nome,
-            $this->id));
+                 $this->email,
+                 $this->senha,
+                 $this->nome,
+                $this->id
+            ));
         }else{
             //registro
             $sql = "INSERT INTO usuarios SET
-            email = ?,
-            senha = ?,
-            nome = ?";
+                email = ?,
+                senha = ?,
+                nome = ?";
             $sql = $this->pdo->prepare($sql);
             $sql->execute(array(
-            $this->email,
-            $this->senha,
-            $this->nome));
+                $this->email,
+                $this->senha,
+                $this->nome
+            ));
         }
     }
     public function delete(){
