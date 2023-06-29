@@ -4,7 +4,7 @@ try{
     $dbuser="root";
     $dbpass="";
     $pdo = new PDO($dsn,$dbuser,$dbpass);
-    echo '<script>alert("conectou!")</script>';
+    // echo '<script>alert("conectou!")</script>';
 }catch(PDOException $e){
     die($e->getMessage());
 }

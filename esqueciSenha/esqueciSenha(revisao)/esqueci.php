@@ -1,4 +1,5 @@
 <?php require_once 'conexao.php';
+date_default_timezone_set('America/Sao_Paulo');//setar qual fuso-horario as horas irão obedecer;
 if(!empty($_POST['email'])){
     $email = $_POST['email'];
 
@@ -17,18 +18,20 @@ if(!empty($_POST['email'])){
         $sql = $pdo->prepare($sql);
         $sql->bindValue(':id_user', $id);
         $sql->bindValue(':hash', $token);
-        $sql->bindValue('expired_in', date('Y-m-d', strtotime('+2 minutes')));
+        $sql->bindValue('expired_in', date('Y-m-d H:i:s', strtotime('+2 days')));
         $sql->execute();
 
         
         $link="http://localhost/b7web/EstudandoPHP/esqueciSenha/esqueciSenha(revisao)/redefinir.php?token=".$token;//site de trocar senha com o token de validação;
 
-        echo '<script>alert("Clique no link para redefinir sua senha:"'.$link.')</script>';
+        // echo '<script>alert("Clique no link para redefinir sua senha:"'.$link.')</script>';
 
-        $mensagem = "Clique no link para redefinir sua senha:".$link;
+        $mensagem = "Clique no link para redefinir sua senha: <a href='".$link."' target='_blank' rel='noopener noreferrer'>Redefinir</a>";
         $assunto = "Redifinação de senha";
         $headers = 'From: seuemail@exemplo.com'."\r\n".'X-MAiler: PHP/'.phpversion();
-        mail($email, $assunto, $mensagem, $headers);
+        // mail($email, $assunto, $mensagem, $headers);
+        echo $mensagem.'<br>';
+        exit;
 
     }
 }
