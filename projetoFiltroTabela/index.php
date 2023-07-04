@@ -18,8 +18,8 @@ if(isset($_POST['sexo']) && $_POST['sexo'] !== ''){
 }
 
 ?>
-<form  method="post">
-    <select name="sexo" id="">
+<form  method="post" id="myForm">
+    <select name="sexo" id="mySelect">
         <option></option>
         
         <option value="0" <?php echo ($sexo == 0) ? 'selected="selected"':'';?> >Masculino</option>
@@ -50,4 +50,5 @@ if(isset($_POST['sexo']) && $_POST['sexo'] !== ''){
         }
         ?>
         </tbody>
+        <script src="script.js"></script>
 </table>
