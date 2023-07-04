@@ -3,7 +3,7 @@ session_start();
 header("Contet-type: image/jpeg");//comando que transforma a estrutura do arquivo php em arquivo de imagem;
 $n = $_SESSION['captcha'];
 
-$imagem = imagecreate(100,50);//criador de imagem do PHP GD, largua e altura;
+$imagem = imagecreate(200,100);//criador de imagem do PHP GD, largua e altura;
 imagecolorallocate($imagem, 200,200,200);/*
 *é usada para alocar uma cor em uma imagem ou paleta de cores.
 
@@ -18,7 +18,7 @@ blue: O valor da cor azul (0-255).
 
 $fontcolor= imagecolorallocate($imagem, 20,20,20);//gerar uma cor para aplicar na font;
 
-imagettftext($imagem, 40, 0, 20, 30, $fontcolor,'Ginga.otf', $n);/*
+imagettftext($imagem, 100, 0, 40, 70, $fontcolor,'Ginga.otf', $n);/*
 gerador de texto em imagens:
 1º Param - onde será inserido;
 2º Param - tamanho da font;
