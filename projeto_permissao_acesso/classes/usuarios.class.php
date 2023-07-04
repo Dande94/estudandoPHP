@@ -35,5 +35,16 @@ class Usuario{
             $this->permissoes = explode(",",$sql['permissoes']);//captura os dados da coluna permissao  do bando de dados e transforma em um array com a explode; e salva na variavel permissoes;
         }
     }
+    public function getPermissoes(){
+        return $this->permissoes;
+    }
+
+    public function temPermissao($p){
+        if(in_array($p, $this->permissoes)){//verificando se existe o item no array de permissoes;
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
 ?>
