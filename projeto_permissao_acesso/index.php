@@ -21,7 +21,12 @@ $lista =  $documentos->getDocumentos();
 <?php if($usuarios->temPermissao('ADD')):?>
 <a href="">Adicionar documento</a>
 <?php endif;?>
-
+    
+<?php if($usuarios->temPermissao('SECRET')):?>
+<br>
+<br>
+<a href="secreto.php">Segredo</a>
+<?php endif;?>
 <br>
 <br>
 <table border="1" width="100%">
@@ -34,8 +39,12 @@ $lista =  $documentos->getDocumentos();
             <tr>
                 <td> <?php echo $item['titulo']; //aqui o professor usa utf8_encode(porém a função já foi depreciada) ?> </td>
                 <td>
+                    <?php if($usuarios->temPermissao('EDIT')):?>
                     <a href="">Editar</a>
+                    <?php endif;?>
+                    <?php if($usuarios->temPermissao('DEL')):?>
                     <a href="">Excluir</a>
+                    <?php endif;?>
                 </td>
             </tr>
 
@@ -44,7 +53,10 @@ $lista =  $documentos->getDocumentos();
     </tbody>
 
 </table>
-
+<br>
+<br>
+<br>
+<a href="logout.php">Sair</a>
 
 <!-- 
     printar permissões do usuario:
