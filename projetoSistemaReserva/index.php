@@ -25,5 +25,15 @@ $carros = new Carros($pdo);
 </head>
 <body>
     <h1>Reservas</h1>
+    <?php
+    $lista = $reservas->getReservas();
+
+    foreach($lista as $item){
+            $data1 = date('d/m/Y', strtotime($item['data_inicio']));
+            $data2 = date('d/m/Y', strtotime($item['data_fim']));
+            //ao trazer as datas do DB vieram como string, e com 'strtotime()', foi convertido pra 'time' e depois reestruturado o formato da data com 'date('d/m/Y)';
+            echo $item['pessoa'].' reservou o carro '.$item['id_carro'].' entre '.$data1.' e '.$data2.'</br>';
+        }
+    ?>  
 </body>
 </html>
