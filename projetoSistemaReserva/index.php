@@ -7,7 +7,7 @@ require_once 'conexao.php';
 require_once 'Classes/reservas.class.php';
 
 $reservas = new Reservas($pdo);
-$carros = new Carros($pdo);
+// $carros = new Carros($pdo);
 /*
 -quando se passa conexão do banco de dados via parametro para a classe, e na classe recebe via __construct(), se chama injeção de depedência;
 - nesse caso estamos instaciando a classe inserindo a conexão dentro dela;
