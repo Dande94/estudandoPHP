@@ -3,7 +3,7 @@
 após termino do projeto ver como faz para adicionar o require de classes dentro do conexao.php;
 */
 require_once 'conexao.php';
-require_once 'Classes/carros.class.php';
+// require_once 'Classes/carros.class.php';
 require_once 'Classes/reservas.class.php';
 
 $reservas = new Reservas($pdo);
@@ -25,6 +25,9 @@ $carros = new Carros($pdo);
 </head>
 <body>
     <h1>Reservas</h1>
+    <a href="reservar.php">Reservar Carro</a>
+    <br>
+    <br>
     <?php
     $lista = $reservas->getReservas();
 
