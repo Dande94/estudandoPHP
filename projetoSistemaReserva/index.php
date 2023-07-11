@@ -1,9 +1,10 @@
 <?php
 // Tempo de espera em segundos
-$tempoEspera = 2;
+// $tempoEspera = 2;
 
 // Redirecionar para a mesma página após o tempo de espera
-header("refresh: $tempoEspera");
+// header("refresh: $tempoEspera");
+
 /*
 após termino do projeto ver como faz para adicionar o require de classes dentro do conexao.php;
 */
@@ -33,15 +34,31 @@ $reservas = new Reservas($pdo);
     <a href="reservar.php">Reservar Carro</a>
     <br>
     <br>
+    <form action="" method="get">
+        <select name="ano" id="">
+            <?php for($q = date('Y'); $q >= 2000 ; $q-- ): ?>
+                <option value=" <?php echo $q; ?>  "> <?php echo $q; ?> </option>
+            <?php endfor;?>
+        </select>
+        <select name="mes" id="">
+            <?php for($m = 12; $m >= 1 ; $m-- ): ?>
+                <option value=" <?php echo $m; ?> "> <?php echo $m; ?> </option>
+            <?php endfor;?>
+        </select>
+        <input type="submit" value="Consultar">
+    </form>
+    <br>
     <?php
     $lista = $reservas->getReservas();
-
+    /** listagem das reservas:
     foreach($lista as $item){
-            $data1 = date('d/m/Y', strtotime($item['data_inicio']));
-            $data2 = date('d/m/Y', strtotime($item['data_fim']));
-            //ao trazer as datas do DB vieram como string, e com 'strtotime()', foi convertido pra 'time' e depois reestruturado o formato da data com 'date('d/m/Y)';
-            echo $item['pessoa'].' reservou o carro '.$item['id_carro'].' entre '.$data1.' e '.$data2.'</br>';
-        }
+        $data1 = date('d/m/Y', strtotime($item['data_inicio']));
+        $data2 = date('d/m/Y', strtotime($item['data_fim']));
+        //ao trazer as datas do DB vieram como string, e com 'strtotime()', foi convertido pra 'time' e depois reestruturado o formato da data com 'date('d/m/Y)';
+        echo $item['pessoa'].' reservou o carro '.$item['id_carro'].' entre '.$data1.' e '.$data2.'</br>';
+    }
+     * 
+    */
     ?>  
     <hr>
     <?php
