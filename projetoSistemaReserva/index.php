@@ -68,7 +68,7 @@ $reservas = new Reservas($pdo);
     $data_fim =  date('Y-m-d', strtotime(($dia1 + ($linhas*7) - 1).'days', strtotime($data)));
 
 
-    $lista = $reservas->getReservas($data_inicio , $data_fim);
+    $lista = $reservas->getReservas($data_inicio , $data_fim);//enviado parametros para usar como filtragem;
     /** listagem das reservas:
      * 
      foreach($lista as $item){

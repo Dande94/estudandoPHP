@@ -22,7 +22,6 @@ echo 'Dia que se termina a ultima linha do calendário: '.$data_fim.'<br>';
 require 'Classes/carros.class.php';
 $carros = new Carros($pdo);
 $listaCarros = $carros->getCarros();
-print_r($listaCarros);
 ?>
 <?php echo '<h3>Período: '.$data.'</h3>'?>
 <table border="1" width="100%">
@@ -52,7 +51,14 @@ print_r($listaCarros);
                                 $dr_inicio = strtotime($item['data_inicio']);
                                 $dr_fim = strtotime($item['data_fim']);
                                 if($w >= $dr_inicio && $w <= $dr_fim){
-                                    echo $item['pessoa'].' ('.$listaCarros[$item['id_carro']]['nome'].')<br>';
+                                    echo $item['pessoa'].' ('.$listaCarros[$item['id_carro']]['nome'].')<br>';//aqui alterei do projeto pois na aula o professor trazia a referencia númerica dos carros, alterei para o trazer o nome dos carros;
+                                    /**
+                                     * $listaCarros[$item['id_carro']]['nome']
+                                     * onde:
+                                     * $listaCarros[] -> é a lista que trouxe via require e estanciamento de classes;
+                                     * $item['id_carro'] -> referencia númerica extraida da tabela reservas do DB;
+                                     * ['nome'] -> chave do array que continha o nome do carro;
+                                     */
                                 }
                             }
                         ?>
