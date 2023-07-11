@@ -9,11 +9,14 @@ class Reservas{
         $this->pdo = $pdo;
     }
 
-    public function getReservas(){//irá listar as reservas que tem no DB;
+    public function getReservas($data_inicio , $data_fim){//irá listar as reservas que tem no DB;
         $array = array(); //normalmente não declaro array vazia se logo vai ser preenchida, mas no projeto caso não há registro retorno um array vazio;
 
-        $sql = "SELECT * FROM reservas";
-        $sql = $this->pdo->query($sql);
+        $sql = "SELECT * FROM reservas WHERE (NOT( data_inicio > :data_fim OR data_fim < :data_inicio )) ";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(":data_inicio", $data_inicio);
+        $sql->bindValue(":data_fim", $data_fim);
+        $sql->execute();
 
         if($sql->rowCount() > 0){//se tiver registro preencherá o array(a função que faz isso e fetchAll())
             $array = $sql->fetchAll();

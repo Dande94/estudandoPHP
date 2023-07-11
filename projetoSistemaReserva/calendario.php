@@ -1,5 +1,6 @@
 <?php
-$data = '2023-06';//mes e ano de referencia;
+/*
+$data = $_GET['ano'].'-'.$_GET['mes'];//mes e ano de referencia;
 
 $dia1 = date('w', strtotime($data.'-01'));// o 'w' na função date trás a dia da semana como se fosse uma posição de array;
 
@@ -12,7 +13,6 @@ $dia1 = -$dia1;//transformando em negativo para poder referencia o domingo;
 $data_inicio =  date('Y-m-d', strtotime($dia1.'days', strtotime($data)));//para saber qual dia inicia aquela semana;
 $data_fim =  date('Y-m-d', strtotime(($dia1 + ($linhas*7) - 1).'days', strtotime($data)));//para saber o dia do calendário(o '7' é por causa da quantidade de dias em uma semana | o' - 1 ' é para desconta o primeiro que já incluso na variavel $dia1);
 
-/*
 echo 'Primeiro Dia: '.$dia1.'<br>';// expressando o dia da semana que começa o mês;
 echo 'Total de dias no mês: '.$dias.'<br>';
 echo 'Linhas p/ semana: '.$linhas.'<br>';
@@ -21,6 +21,8 @@ echo 'Dia que se termina a ultima linha do calendário: '.$data_fim.'<br>';
 */
 ?>
 <br>
+<br>
+<?php echo '<h3>Período: '.$data.'</h3>'?>
 <table border="1" width="100%">
     <thead>
         <th>Dom</th>
