@@ -1,4 +1,9 @@
 <?php
+// Tempo de espera em segundos
+$tempoEspera = 2;
+
+// Redirecionar para a mesma página após o tempo de espera
+header("refresh: $tempoEspera");
 /*
 após termino do projeto ver como faz para adicionar o require de classes dentro do conexao.php;
 */
@@ -38,5 +43,9 @@ $reservas = new Reservas($pdo);
             echo $item['pessoa'].' reservou o carro '.$item['id_carro'].' entre '.$data1.' e '.$data2.'</br>';
         }
     ?>  
+    <hr>
+    <?php
+    require_once 'calendario.php';
+    ?>
 </body>
 </html>
