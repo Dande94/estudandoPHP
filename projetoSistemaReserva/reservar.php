@@ -52,7 +52,7 @@ if(!empty($_POST['carro'])){
         ?>
             <option value="<?php echo $carro['id']?>"><?php echo $carro['nome']?></option>
         <?php
-        endforeach;
+            endforeach;
         ?>
         </select>
         <br>

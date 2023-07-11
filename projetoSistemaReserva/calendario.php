@@ -19,8 +19,11 @@ echo 'Linhas p/ semana: '.$linhas.'<br>';
 echo 'Dia que se inicia aquela semana: '.$data_inicio.'<br>';
 echo 'Dia que se termina a ultima linha do calendário: '.$data_fim.'<br>';
 */
+require 'Classes/carros.class.php';
+$carros = new Carros($pdo);
+$listaCarros = $carros->getCarros();
+print_r($listaCarros);
 ?>
-
 <?php echo '<h3>Período: '.$data.'</h3>'?>
 <table border="1" width="100%">
     <thead>
@@ -49,7 +52,7 @@ echo 'Dia que se termina a ultima linha do calendário: '.$data_fim.'<br>';
                                 $dr_inicio = strtotime($item['data_inicio']);
                                 $dr_fim = strtotime($item['data_fim']);
                                 if($w >= $dr_inicio && $w <= $dr_fim){
-                                    echo $item['pessoa'].' ('.$item['id_carro'].')<br>';
+                                    echo $item['pessoa'].' ('.$listaCarros[$item['id_carro']]['nome'].')<br>';
                                 }
                             }
                         ?>
