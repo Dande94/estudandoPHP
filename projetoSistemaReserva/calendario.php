@@ -37,18 +37,19 @@ echo 'Dia que se termina a ultima linha do calendário: '.$data_fim.'<br>';
             <tr>
                 <?php for($q=0; $q < 7; $q++): ?>
                     <?php 
-                    $w = date('Y-m-d', strtotime(($q + ($l * 7)).' day', strtotime($data_inicio)))//data completa
-                    // $w = date('d', strtotime(($q + ($l * 7)).' day', strtotime($data_inicio)))//apenas o dia da data;
+                    $t =  strtotime(($q + ($l * 7)).' day', strtotime($data_inicio));
+                    $w = date('Y-m-d', $t);//data completa
+                    // $w = date('d', strtotime(($q + ($l * 7)).' day', strtotime($data_inicio)));//apenas o dia da data;
                     ?>
                     <td>
                         <?php 
-                        echo $w.'<br><br>'; 
+                        echo date('d', $t).'<br><br>';
                         $w = strtotime($w);
                             foreach($lista as $item){
                                 $dr_inicio = strtotime($item['data_inicio']);
                                 $dr_fim = strtotime($item['data_fim']);
                                 if($w >= $dr_inicio && $w <= $dr_fim){
-                                    echo $item['pessoa'].'<br>';
+                                    echo $item['pessoa'].' ('.$item['id_carro'].')<br>';
                                 }
                             }
                         ?>
