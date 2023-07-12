@@ -23,6 +23,17 @@ $sql = $pdo->query($sql);
             echo $filmes['titulo'];
             ?>
             </strong>
+            <br>
+            <a href="votar.php?id=<?php echo $filmes['id']; ?>&voto=1"><img src="star.png" height="20"></a>
+            <a href="votar.php?id=<?php echo $filmes['id']; ?>&voto=2"><img src="star.png" height="20"></a>
+            <a href="votar.php?id=<?php echo $filmes['id']; ?>&voto=3"><img src="star.png" height="20"></a>
+            <a href="votar.php?id=<?php echo $filmes['id']; ?>&voto=4"><img src="star.png" height="20"></a>
+            <a href="votar.php?id=<?php echo $filmes['id']; ?>&voto=5"><img src="star.png" height="20"></a>
+
+
+
+            (<?php echo $filmes['media']; ?>)
+
         </fieldset>
     <?php
         endforeach;
