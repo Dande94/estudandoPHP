@@ -1,7 +1,24 @@
 <?php
 session_start();
-
 require_once 'conexao.php';
+
+if(isset($_POST['email']) && !empty($_POST['email'])){
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+
+    $sql= 'SELECT * FROM usuarios WHERE email = :email AND senha = MD5(:senha)';
+    $sql = $pdo->prepare($sql);
+    $sql->bindValue(":email", $email);
+    $sql->bindValue(":senha", $senha);
+    $sql->execute();
+
+    if($sql->rowCount() > 0){
+        $sql = $sql->fetch();
+        $id =  $sql['id'];
+    }
+
+    $_SESSION['lg'] = $id;    
+}
 
 ?>
 <!DOCTYPE html>
