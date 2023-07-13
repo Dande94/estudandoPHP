@@ -13,6 +13,10 @@ echo ($idade1 >= 18) ? 'De maior!':'De menor!';//ternário
 echo '<br>';
 //if($idade2 >= 18){echo 'De maior!';}else{echo 'De menor!';}
 echo ($idade1 <= 18) ? 'De maior!':'De menor!';//ternário
+echo '<br>';
+echo !($idade1 <= 18) ? 'De maior!':'De menor!';//ternário negando
+echo '<br>';
+echo !($idade1 >= 18) ? 'De maior!':'De menor!';//ternário negando
 /**
  * X < Y 
  * X > Y
