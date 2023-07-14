@@ -1,25 +1,29 @@
 <?php
-if(isset($_POST['nome']) && !empty($_POST['nome'])){
-    $nome = addslashes(($_POST['nome']));
-    $email = addslashes(($_POST['email']));
-    $msg = addslashes(($_POST['msg']));
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nome = $_POST['nome'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $msg = $_POST['msg'] ?? '';
 
     $para = "anderson94.nunes@gmail.com";
     $assunto = "Pergunta do Contato";
-    $corpo = "Nome: ".$nome."- E-mail: ".$email."- Mensagem: ".$msg;
+    $corpo = "Nome: $nome - E-mail: $email - Mensagem: $msg";
 
-    //puladores de linha \r\n;
-    $cabecalho = "From: dande.nunes.94@gmail.com"."\r\n".
-                "Reply-To:".$email."\r\n". 
-                "X-Mailer:PHP/".phpversion();
+    $cabecalhos = [
+        "From: dande.nunes.94@gmail.com",
+        "Reply-To: $email",
+        "X-Mailer: PHP/" . phpversion()
+    ];
 
-    mail($para, $assunto,$corpo,$cabecalho);
-    echo "<h2>Email enviado com sucesso</h2>";
-    exit;
-
+    if (mail($para, $assunto, $corpo, $cabecalhos)) {
+        echo "<h2>Email enviado com sucesso</h2>";
+        exit;
+    } else {
+        echo "<h2>Ocorreu um erro ao enviar o email</h2>";
+        exit;
+    }
 }
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,6 +50,6 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])){
   <button type="submit" class="btn btn-primary px-5">Enviar</button>
 </form>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
