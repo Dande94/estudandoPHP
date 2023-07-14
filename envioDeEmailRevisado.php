@@ -8,11 +8,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $assunto = "Pergunta do Contato";
     $corpo = "Nome: $nome - E-mail: $email - Mensagem: $msg";
 
-    $cabecalhos = [
-        "From: dande.nunes.94@gmail.com",
-        "Reply-To: $email",
-        "X-Mailer: PHP/" . phpversion()
-    ];
+    // $cabecalhos = [
+    //     "From: dande.nunes.94@gmail.com",
+    //     "Reply-To: $email",
+    //     "X-Mailer: PHP/" . phpversion()
+    // ];
+
+    $cabecalhos = "From: $email ".
+    "Reply-To: $email".
+    "X-Mailer: PHP/" . phpversion();
 
     if (mail($para, $assunto, $corpo, $cabecalhos)) {
         echo "<h2>Email enviado com sucesso</h2>";
