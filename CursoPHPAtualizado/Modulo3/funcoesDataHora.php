@@ -13,6 +13,8 @@ echo 'Dia:'.date('z - d/m/Y H:i:s l');//tras a data atual, o formato desejado é
 echo "<br>";
 echo date('Y-m-d')." - Padrão internacional";
 echo "<br>";
+
+
 $data = '15-07-2023';
 $time = strtotime($data);
 //usando o 2º parametro de date();
