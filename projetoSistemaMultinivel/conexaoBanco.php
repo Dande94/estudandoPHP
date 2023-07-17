@@ -1,5 +1,5 @@
 <?php
-$dsn = "mysql:dbname=projeto_usuarios_online;host=127.0.0.1";
+$dsn = "mysql:dbname=projeto_sistema_multinivel;host=127.0.0.1";
 $dbuser = "root";
 $dbpass = "";
 try{
