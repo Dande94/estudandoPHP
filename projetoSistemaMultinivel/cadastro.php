@@ -13,9 +13,7 @@ if(!empty($_POST['nomeUser']) && !empty($_POST['email'])){
     $sql->bindValue(':email', $email);
     $sql->execute();
 
-    if($sql->rowCount() > 0){
-        echo "Usuarios já cadastrado";
-    }else{
+    if($sql->rowCount() == 0){
         $sql = 'INSERT INTO usuarios (id_pai, nome, email, senha) VALUES (:id_pai, :nome, :email, :senha)';
         $sql  = $pdo->prepare($sql);
         $sql->bindValue(':id_pai', $id_pai);
@@ -23,8 +21,10 @@ if(!empty($_POST['nomeUser']) && !empty($_POST['email'])){
         $sql->bindValue(':email', $email);
         $sql->bindValue(':senha', $senha);
         $sql->execute();
-
-
+        header("Location: index.php");
+        exit;
+    }else{
+        echo "Usuarios já cadastrado";
     }
 
 }
