@@ -20,4 +20,18 @@
     return $lista;
 }
 
+function exibir($array){
+    echo "<ul>";
+    foreach($array as $usuario){
+        echo "<li>";
+            echo  ucwords($usuario['nome'])." - (".count($usuario['filhos'])." cadastros diretos)";
+                if(count($usuario['filhos']) > 0 ){
+                    exibir($usuario['filhos']);
+                }
+        echo "</li>";
+    }
+    echo "</ul>";
+};
+
+
 ?>

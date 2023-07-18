@@ -32,13 +32,7 @@ $lista = listar($id,$limite);
 <a href="logout.php">Sair</a>
 <br><br>
 <h2>Lista de cadastro</h2>
-<pre>
-    <?php print_r($lista)?>
-</pre>
-<ul>
-    <?php foreach($lista as $usuario):?>
-        <li>
-            <?php echo ucwords($usuario['nome']);?>
-        </li>
-    <?php endforeach;?>
-</ul>
+
+<?php exibir($lista)?>
+
+
