@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once 'conexaoBanco.php';
+require_once 'funcoes.php';
 if(empty($_SESSION['mmnlogin'])){
     header("Location: login.php");
     die;
@@ -21,6 +22,7 @@ if($sql->rowCount() > 0){
     die;
 };
 
+$lista = listar($id,$limite);
 
 ?>
 <h2>Sistema Multinivel</h2>
@@ -28,3 +30,15 @@ if($sql->rowCount() > 0){
 <a href="cadastro.php">Cadastrar Novo Usuario</a>
 <br>
 <a href="logout.php">Sair</a>
+<br><br>
+<h2>Lista de cadastro</h2>
+<pre>
+    <?php print_r($lista)?>
+</pre>
+<ul>
+    <?php foreach($lista as $usuario):?>
+        <li>
+            <?php echo ucwords($usuario['nome']);?>
+        </li>
+    <?php endforeach;?>
+</ul>
