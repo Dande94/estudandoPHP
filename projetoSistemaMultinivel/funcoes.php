@@ -6,7 +6,7 @@
         $sql = $pdo->prepare($sql);
         $sql->bindValue(":id", $id);
         $sql->execute();
-
+        $filhos = 0;
         if($sql -> rowCount()){
             $lista = $sql->fetchAll(PDO::FETCH_ASSOC);
 

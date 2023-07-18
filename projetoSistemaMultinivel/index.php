@@ -2,6 +2,7 @@
 session_start();
 require_once 'conexaoBanco.php';
 require_once 'funcoes.php';
+// require_once 'atualizar.php';
 if(empty($_SESSION['mmnlogin'])){
     header("Location: login.php");
     die;
