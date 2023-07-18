@@ -11,4 +11,5 @@ try{
     die;
 }
 $limite = 3;
+$patentes = [];
 ?>
