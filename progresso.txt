@@ -1,1 +1,3 @@
 git commit -am "Modulo 12 - Projeto Sistema Multinivel pt.6"
+
+git commit -am "Saindo do Tutorial Hell pt.1"
