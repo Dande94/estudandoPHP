@@ -53,5 +53,18 @@ $tarefa = $tarefas->listarTarefas($id_user);
     </table>
     <br>
     <a href="login&logout/logout.php">Sair</a>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="js/notify.min.js"></script>
 </body>
 </html>
+<?php
+if(isset($_GET['retorno']) == true && $_GET['retorno'] == 3){
+    echo "<script> $.notify('Tarefa Adicionada a lista!', 'success'); </script>";
+}elseif(isset($_GET['retorno']) == true && $_GET['retorno'] == 4){
+    echo "<script> $.notify('Houve um problema ao tentar registrar uma tarefa!', 'warn'); </script>";
+}elseif(isset($_GET['retorno']) == true && $_GET['retorno'] == 5){
+    echo "<script> $.notify('Tarefa Concluída!', 'success'); </script>";
+}elseif(isset($_GET['retorno']) == true && $_GET['retorno'] == 4){
+    echo "<script> $.notify('Houve um problema ao descartar esse tarefa da lista!', 'warn'); </script>";
+}
+?>

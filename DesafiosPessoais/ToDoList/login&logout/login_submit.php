@@ -8,11 +8,11 @@ if(!empty($_POST['emailUser']) && !empty($_POST['passUser'])){
     if($loginUser->validarLogin($emailUser, $passUser)){
         header('Location: ../index.php');
     }else{
-        header($redirecionar);
+        header($redirecionar."?retorno=2");
         die;
     }
 }else{
-    header($redirecionar);
+    header($redirecionar."?retorno=1");
     die;
 }
 ?>
