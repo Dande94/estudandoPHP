@@ -8,7 +8,7 @@ if(empty($_SESSION['loginUSer'])){
 }
 $id_user = $_SESSION['loginUSer'];
 $tarefa = $tarefas->listarTarefas($id_user);
-print_r($tarefa);
+// print_r($tarefa);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -35,16 +35,20 @@ print_r($tarefa);
             </th>
         </thead>
         <tbody>
-            <?php foreach($tarefa as $item):?>
+            <?php
+            if(empty($tarefa)){
+                echo "<tr><td>Não há tarefas</td></tr>";
+            }else{
+             foreach($tarefa as $item):?>
                 <tr>
                     <td>
                     <?=$item['tarefa']?>
                     </td>
                     <td>
-                        <a href="tarefas/excluir_tarefa.php">Feito</a>
+                        <a href="tarefas/excluir_tarefa.php?id=<?php echo $item['id'];?>">Feito</a>
                     </td>
                 </tr>
-            <?php endforeach;?>
+            <?php endforeach;}?>
         </tbody>
     </table>
     <br>

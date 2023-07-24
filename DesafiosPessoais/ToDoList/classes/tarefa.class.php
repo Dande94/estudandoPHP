@@ -23,13 +23,16 @@ class Tarefa{
         $sql->execute();
         if($sql->rowCount() > 0){
            return $sql->fetchAll(PDO::FETCH_ASSOC);
-        }else{
-            echo "Não há tarefas!";
         }
 
     }
     //excluir tarefa
-
+    public function excluirTarefa($id_tarefa){
+        $sql = "DELETE FROM tarefas WHERE id = :id_tarefa";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(":id_tarefa", $id_tarefa);
+        $sql->execute();
+    }
 
 }
 ?>
