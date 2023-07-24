@@ -8,13 +8,13 @@ if(!empty($_POST['emailUser']) && !empty($_POST['passUser'])){
         $emailUser = $_POST['emailUser'];
         $passUser = $_POST['passUser'];
         $addUser->adicionarUser($nomeUser, $emailUser, $passUser);
-        header('Location: ../login&logout/login.php');
+        header('Location: ../login&logout/login.php?retorno=7');
     }else{
-        header($redirecionar);
+        header($redirecionar."?retorno=8");
         die;
     }
 }else{
-    header($redirecionar);
+    header($redirecionar."?retorno=8");
     die;
 }
 ?>

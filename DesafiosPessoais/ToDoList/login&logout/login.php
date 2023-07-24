@@ -29,5 +29,7 @@ if(isset($_GET['retorno']) == true && $_GET['retorno'] == 2){
     echo "<script> $.notify('Login ou Senha Incorretos', 'warn'); </script>";
 }elseif(isset($_GET['retorno']) == true && $_GET['retorno'] == 1){
     echo "<script> $.notify('Conta inexistente', 'error'); </script>";
+}elseif(isset($_GET['retorno']) == true && $_GET['retorno'] == 7){
+    echo "<script> $.notify('Cadastro Realizado com Sucesso!', 'success'); </script>";
 }
 ?>

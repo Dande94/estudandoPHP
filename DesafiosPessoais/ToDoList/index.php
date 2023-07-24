@@ -64,7 +64,7 @@ if(isset($_GET['retorno']) == true && $_GET['retorno'] == 3){
     echo "<script> $.notify('Houve um problema ao tentar registrar uma tarefa!', 'warn'); </script>";
 }elseif(isset($_GET['retorno']) == true && $_GET['retorno'] == 5){
     echo "<script> $.notify('Tarefa Concluída!', 'success'); </script>";
-}elseif(isset($_GET['retorno']) == true && $_GET['retorno'] == 4){
+}elseif(isset($_GET['retorno']) == true && $_GET['retorno'] == 6){
     echo "<script> $.notify('Houve um problema ao descartar esse tarefa da lista!', 'warn'); </script>";
 }
 ?>
