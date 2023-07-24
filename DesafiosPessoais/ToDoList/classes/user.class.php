@@ -43,6 +43,16 @@ class User{
        }
 
     }
+    public function nomeUser($id_user){
+      $sql = "SELECT nome FROM usuarios WHERE id = :id_user";
+      $sql = $this->pdo->prepare($sql);
+      $sql->bindValue(":id_user", $id_user);
+      $sql->execute();
+
+      $info = $sql->fetch();
+      return $info;
+
+    }
 
     //recursiva
     private function existeEmail($emailUser){
