@@ -2,7 +2,7 @@
 require_once '../classes/user.class.php';
 $addUser = new User();
 $redirecionar = 'Location: cadastroUSerForm.php';
-if(!empty($_POST['emailUser'])){
+if(!empty($_POST['emailUser']) && !empty($_POST['passUser'])){
     if(isset($_POST['emailUser'])){
         $nomeUser = $_POST['nomeUser'];
         $emailUser = $_POST['emailUser'];

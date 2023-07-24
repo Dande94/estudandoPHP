@@ -19,5 +19,8 @@ if(empty($_SESSION['loginUSer'])){
         <input type="text" name="nome_tarefa" id="">
         <input type="submit" value="Anotar">
     </form>
+    <br>
+    <br>
+    <a href="login&logout/logout.php">Sair</a>
 </body>
 </html>

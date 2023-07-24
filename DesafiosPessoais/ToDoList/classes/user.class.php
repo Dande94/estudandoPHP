@@ -8,6 +8,7 @@ class User{
         $this->pdo = new PDO($dsn,$dbuser,$dbpass);
     }
 
+    //cadastro
     public function adicionarUser($nomeUSer ,$emailUser, $passUser){
       if($this->existeEmail($emailUser) == false){
         $sql = "INSERT INTO usuarios (nome, email, senha) VALUES (:nomeUSer,:emailUser,:passUser)";
@@ -22,17 +23,35 @@ class User{
       }
 
     }
-    private function existeEmail($emailUser){
+
+    //login
+    public function validarLogin($emailUser, $passUser){
+      if($this->existeEmail($emailUser)){
         $sql = "SELECT * FROM usuarios WHERE email = :emailUser";
         $sql = $this->pdo->prepare($sql);
         $sql->bindValue(':emailUser', $emailUser);
         $sql->execute();
-
-        if($sql->rowCount() > 0){
-            return true;
+        
+        $dado = $sql->fetch();
+        if(password_verify($passUser, $dado['senha'])){
+          session_start();
+          $_SESSION['loginUSer'] = $dado['id'];
+          return true;
         }else{
-            return false;
+          return false;
         }
+       }
+
     }
+
+    //recursivas
+    private function existeEmail($emailUser){
+      $sql = "SELECT * FROM usuarios WHERE email = :emailUser";
+      $sql = $this->pdo->prepare($sql);
+      $sql->bindValue(':emailUser', $emailUser);
+      $sql->execute();
+
+      return ($sql->rowCount() > 0) ? true : false;
+  }
 }
 ?>
