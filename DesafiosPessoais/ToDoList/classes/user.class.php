@@ -44,7 +44,7 @@ class User{
 
     }
 
-    //recursivas
+    //recursiva
     private function existeEmail($emailUser){
       $sql = "SELECT * FROM usuarios WHERE email = :emailUser";
       $sql = $this->pdo->prepare($sql);
