@@ -4,7 +4,7 @@ class User{
     private $pdo;
     public function __construct()
     {
-        require_once 'config/conexaoBanco.php';
+        require_once '../config/conexaoBanco.php';
         $this->pdo = new PDO($dsn,$dbuser,$dbpass);
     }
 

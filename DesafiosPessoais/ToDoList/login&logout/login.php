@@ -17,6 +17,6 @@ require_once '../config/conexaoBanco.php';
         <input type="password" name="passUser" id=""><br><br>
         <input type="submit" value="Entrar">
     </form>
-<p>Ainda não tem cadastro?! <a href="../cadastroUserForm.php"><Strong>Cadastre-se</Strong></a></p>
+<p>Ainda não tem cadastro?! <a href="../cadastros/cadastroUserForm.php"><Strong>Cadastre-se</Strong></a></p>
 </body>
 </html>
