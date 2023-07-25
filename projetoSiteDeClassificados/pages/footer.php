@@ -4,7 +4,8 @@
     <script src="assets/js/notify.min.js"></script>
     <script src="assets/js/script.js"></script>
 
-    <!-- scripts -->
-</body>
 
-</html>
+    <!-- scripts -->
+    </body>
+
+    </html>
