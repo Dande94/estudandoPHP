@@ -1,3 +1,4 @@
+<?php require_once 'config/conexaoBanco.php';?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -16,6 +17,7 @@
             <a class="navbar-brand text-light" href="#">Classificados</a>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav text-light">
+                    <?php if(isset($_SESSION['cLogin']))?>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="#">Cadastre-se</a>
                     </li>
