@@ -1,4 +1,4 @@
-<?php require_once 'config/conexaoBanco.php';?>
+<?php require_once 'config/conexaoBanco.php'; ?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -11,19 +11,28 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- styles -->
 </head>
+
 <body>
     <nav class="navbar bg-dark navbar-expand-lg rounded-bottom">
         <div class="container-fluid">
             <a class="navbar-brand text-light" href="#">Classificados</a>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav text-light">
-                    <?php if(isset($_SESSION['cLogin']))?>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Cadastre-se</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Login</a>
-                    </li>
+                    <?php if (isset($_SESSION['cLogin']) && !empty($_SESSION['cLogin'])) : ?>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="meusAnuncios.php">Meus Anúncios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="sair.php">Sair</a>
+                        </li>
+                    <?php else: ?>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="cadastrar.php">Cadastre-se</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="login.php">Login</a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
