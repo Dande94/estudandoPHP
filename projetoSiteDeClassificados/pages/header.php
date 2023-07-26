@@ -1,4 +1,4 @@
-<?php require_once 'config/conexaoBanco.php'; ?>
+<?php require_once 'config/conexaoBanco.php'; require_once 'classes/usuario.class.php' ;$u = new Usuario(); ?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -19,6 +19,11 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav text-light">
                     <?php if (isset($_SESSION['cLogin']) && !empty($_SESSION['cLogin'])) : ?>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="#">Olá, 
+                                <?php $u->getNomeUser($_SESSION['cLogin']);  ?>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" href="meusAnuncios.php">Meus Anúncios</a>
                         </li>

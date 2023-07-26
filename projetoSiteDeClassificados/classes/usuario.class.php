@@ -36,6 +36,20 @@ class Usuario{
         }
         
     }
+
+    public function getNomeUser($idUSer){
+        global $pdo;
+        $sql = "SELECT nome FROM usuarios WHERE id = :idUser";
+        $sql = $pdo->prepare($sql);
+        $sql->bindValue(":idUser", $idUSer);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $nome = $sql->fetch();
+            echo $nome['nome']." |";
+        }
+
+    }
     //recursiva
     private function verificarEmailExiste($emailUser){
         global $pdo;
