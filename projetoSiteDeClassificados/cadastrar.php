@@ -10,10 +10,18 @@
         $senhaUser = $_POST['senhaUser'];
 
         if (!empty($nomeUser) && !empty($emailUser) && !empty($senhaUser)) {
-            $u->cadastar($nomeUser, $telUser, $emailUser, $senhaUser);
+            if($u->cadastar($nomeUser, $telUser, $emailUser, $senhaUser)){
+                ?>
+                    <div class="alert alert-success" role="alert"><strong>Cadastrado</strong> com sucesso. <a href="login.php">Faça o Login</a></div>
+                <?php
+            }else{
+                ?>
+                    <div class="alert alert-warning" role="alert"><strong>Usuário</strong> já cadastrado. <a href="login.php">Faça o Login</a></div>
+                <?php
+            }
         } else {
             ?>
-                <div class="alert alert-warning" role="alert">Preencha todos os campo!</div>
+                <div class="alert alert-warning" role="alert">Preencha todos os campos!</div>
             <?php
         }
     }
