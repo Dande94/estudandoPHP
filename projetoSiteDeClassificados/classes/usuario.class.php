@@ -1,5 +1,6 @@
 <?php
 class Usuario{
+    //cadastro
     public function cadastar($nomeUser, $telUser, $emailUser, $senhaUser){
         global $pdo;
         if($this->verificarEmailExiste($emailUser)){
@@ -16,6 +17,25 @@ class Usuario{
         }
     }
 
+    //login
+    public function loginUser($emailUser, $senhaUser){
+        global $pdo;
+        if($this->verificarEmailExiste($emailUser)){
+            $sql = "SELECT id, senha FROM usuarios WHERE email = :emailUser";
+            $sql = $pdo->prepare($sql);
+            $sql->bindValue(":emailUser", $emailUser);
+            $sql->execute();
+
+            $dados =$sql->fetch();
+            if(password_verify($senhaUser, $dados['senha'])){
+                $_SESSION['cLogin'] = $dados['id'];
+                return true;
+            }else{
+                return false;
+            }
+        }
+        
+    }
     //recursiva
     private function verificarEmailExiste($emailUser){
         global $pdo;
