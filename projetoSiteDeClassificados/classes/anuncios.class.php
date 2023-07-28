@@ -16,5 +16,18 @@ class Anuncios{
         }
          return $array;
     }
+
+    public function addAnuncio($catAnuncio, $tituloAnuncio, $descAnuncio, $precoAnuncio, $estadoAnuncio){
+        global $pdo;
+        $sql = "INSERT INTO anuncio (id_usuario,id_categoria, titulo, descricao, preco, estado) VALUES(:idUsuario ,:catAnuncio, :tituloAnuncio, :descAnuncio, :precoAnuncio, :estadoAnuncio)";
+        $sql = $pdo->prepare($sql);
+        $sql->bindValue("::idUsuario)",$_SESSION['cLogin']);
+        $sql->bindValue(":catAnuncio)",$catAnuncio);
+        $sql->bindValue(":tituloAnuncio",$tituloAnuncio);
+        $sql->bindValue(":descAnuncio",$descAnuncio);
+        $sql->bindValue(":precoAnuncio",$precoAnuncio);
+        $sql->bindValue(":estadoAnuncio",$estadoAnuncio);
+        $sql->execute();
+    }
 }
 ?>
