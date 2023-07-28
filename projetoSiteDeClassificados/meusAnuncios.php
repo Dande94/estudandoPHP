@@ -9,7 +9,7 @@ if(empty($_SESSION['cLogin'])){
 ?>
 <main class="container">
     <h2>Meus Anúncios</h2> 
-
+    <a href="addAnuncio.php" class="btn btn-outline-dark">Adicionar Anúncio</a>
     <table class="table table-striped">
         <thead>
             <th>Foto</th>
