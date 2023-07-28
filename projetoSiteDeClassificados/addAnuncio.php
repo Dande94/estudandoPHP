@@ -18,7 +18,9 @@ if(isset($_POST['tituloAnuncio']) && !empty($_POST['tituloAnuncio'])){
 
     $a->addAnuncio($catAnuncio, $tituloAnuncio, $descAnuncio, $precoAnuncio, $estadoAnuncio);
     ?>
-        <div class="alert alert-success" role="alert">Anuncio <strong>cadastrado</strong> com sucesso!</div>
+        <div class="container my-3">
+         <div class="alert alert-success" role="alert">Anuncio <strong>cadastrado</strong> com sucesso!</div>
+        </div>
     <?php
 }
 
@@ -54,7 +56,7 @@ if(isset($_POST['tituloAnuncio']) && !empty($_POST['tituloAnuncio'])){
             <label class="form-label">Estado de conservação:</label>
             <select name="estadoAnuncio" id="estadoAnuncio" class="form-select">
                 <option value="0">Ruim</option>
-                <option value="1" selected >Bom</option>
+                <option value="1">Bom</option>
                 <option value="2">Ótimo</option>
             </select>
         </div>

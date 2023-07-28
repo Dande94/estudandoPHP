@@ -32,7 +32,10 @@ if(empty($_SESSION['cLogin'])){
                         <?php echo $anuncio['titulo']; ?>
                     </td>
                     <td>
-                        R$ <?php echo number_format($anuncio['valor'],2) ?>
+                        R$ <?php echo number_format($anuncio['preco'],2) ?>
+                    </td>
+                    <td>
+
                     </td>
                 </tr>
             <?php endforeach; ?>
