@@ -9,11 +9,11 @@ class User{
     }
 
     //cadastro
-    public function adicionarUser($nomeUSer ,$emailUser, $passUser){
+    public function adicionarUser($nomeUser ,$emailUser, $passUser){
       if($this->existeEmail($emailUser) == false){
-        $sql = "INSERT INTO usuarios (nome, email, senha) VALUES (:nomeUSer,:emailUser,:passUser)";
+        $sql = "INSERT INTO usuarios (nome, email, senha) VALUES (:nomeUser,:emailUser,:passUser)";
         $sql = $this->pdo->prepare($sql);
-        $sql->bindValue(':nomeUSer', $nomeUSer);
+        $sql->bindValue(':nomeUser', $nomeUser);
         $sql->bindValue(':emailUser', $emailUser);
         $sql->bindValue(':passUser', password_hash($passUser, PASSWORD_DEFAULT));
         $sql->execute();
