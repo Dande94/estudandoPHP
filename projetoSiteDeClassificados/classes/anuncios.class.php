@@ -16,6 +16,22 @@ class Anuncios{
         }
          return $array;
     }
+
+    public function getAnuncio($id){
+        $array = array ();
+        global $pdo;
+        $sql = "SELECT * FROM anuncio WHERE id = :id";
+        $sql = $pdo->prepare($sql);
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+
+        if($sql->rowCount()>0){
+            $array = $sql->fetch();
+        }
+        return $array;
+
+    }
+
     public function addAnuncio($catAnuncio, $tituloAnuncio, $descAnuncio, $precoAnuncio, $estadoAnuncio){
         global $pdo;
         $sql = "INSERT INTO anuncio (id_usuario,id_categoria, titulo, descricao, preco, estado) VALUES (:idUsuario , :catAnuncio, :tituloAnuncio, :descAnuncio, :precoAnuncio, :estadoAnuncio)";
@@ -39,6 +55,25 @@ class Anuncios{
         $sql = "DELETE FROM anuncio WHERE id = :id";
         $sql = $pdo->prepare($sql);
         $sql->bindValue(":id", $id);
+        $sql->execute();
+    }
+
+    public function editAnuncio($catAnuncio, $tituloAnuncio, $descAnuncio, $precoAnuncio, $estadoAnuncio, $id){
+        global $pdo;
+        $sql = "UPDATE anuncio SET
+        id_categoria = :catAnuncio,
+        titulo =:tituloAnuncio,
+        descricao = :descAnuncio,
+        preco = :precoAnuncio,
+        estado = :estadoAnuncio
+        WHERE id = :id";
+        $sql = $pdo->prepare($sql);
+        $sql->bindValue(":catAnuncio",$catAnuncio);
+        $sql->bindValue(":tituloAnuncio",$tituloAnuncio);
+        $sql->bindValue(":descAnuncio",$descAnuncio);
+        $sql->bindValue(":precoAnuncio",$precoAnuncio);
+        $sql->bindValue(":estadoAnuncio",$estadoAnuncio);
+        $sql->bindValue(":id",$id);
         $sql->execute();
     }
 }
