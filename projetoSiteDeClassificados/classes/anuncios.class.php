@@ -28,5 +28,18 @@ class Anuncios{
         $sql->bindValue(":estadoAnuncio",$estadoAnuncio);
         $sql->execute();
     }
+
+    public function excluirAnuncio($id){
+        global $pdo;
+        $sql = "DELETE FROM anuncios_imagens WHERE id_anuncios = :id_anuncio";
+        $sql = $pdo->prepare($sql);
+        $sql->bindValue(":id_anuncio", $id);
+        $sql->execute();
+
+        $sql = "DELETE FROM anuncio WHERE id = :id";
+        $sql = $pdo->prepare($sql);
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+    }
 }
 ?>
