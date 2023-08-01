@@ -26,7 +26,11 @@ if(empty($_SESSION['cLogin'])){
             ?>
                 <tr>
                     <td>
-                        <img src="assets/images/anuncios/<?php echo $anuncio['url'];?>" border="0" alt="">
+                        <?php if(!empty($anuncio['url'])):?>
+                            <img src="assets/images/anuncios/<?php echo $anuncio['url'];?>" border="0" height="50" alt="">
+                        <?php else:?>
+                            <img src="assets/images/default.jpg" height="50" alt="">
+                        <?php endif;?>
                     </td>
                     <td>
                         <?php echo $anuncio['titulo']; ?>
@@ -35,7 +39,8 @@ if(empty($_SESSION['cLogin'])){
                         R$ <?php echo number_format($anuncio['preco'],2) ?>
                     </td>
                     <td>
-
+                        <a class="btn btn-outline-secondary" href="editarAnuncio.php?id=<?php echo $anuncio['id']?>">Editar</a>
+                        <a class="btn btn-outline-danger" href="excluirAnuncio.php?id=<?php echo $anuncio['id']?>">Excluir</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
