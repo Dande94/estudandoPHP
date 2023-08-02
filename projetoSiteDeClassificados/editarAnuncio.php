@@ -78,13 +78,18 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
         </div>
         <div class="mb-3">
             <label class="form-label">Fotos do anúncio:</label><br>
-            <input type="file" name="fotos[]" id="" multiple>
+            <input type="file" name="fotos[]" class="form-control" id="" multiple>
             <div class="card mt-3">
                 <div class="card-header">
                     Fotos do anúncio:
                 </div>
                 <div class="card-body">
-
+                    <?php foreach($info['fotos'] as $foto): ?>
+                        <div class="foto_item">
+                            <img class="img-thumbnail" src="assets/images/anuncios/<?php echo $foto['url']?>" alt=""><br>
+                            <a class="btn btn-outline-danger" href="excluirFoto.php?id=<?php echo $foto['id']?>">Excluir imagem</a>
+                        </div>
+                    <?php endforeach;?>
                 </div>
             </div>
         </div>

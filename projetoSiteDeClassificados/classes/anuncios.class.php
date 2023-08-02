@@ -27,6 +27,17 @@ class Anuncios{
 
         if($sql->rowCount()>0){
             $array = $sql->fetch();
+
+            $array['fotos'] = [];   
+
+            $sql = "SELECT id,url FROM anuncios_imagens WHERE id_anuncios = :id_anuncios";
+            $sql = $pdo->prepare($sql);
+            $sql->bindValue(":id_anuncios", $id);
+            $sql->execute();
+
+            if($sql->rowCount()>0){
+                $array['fotos'] = $sql->fetchAll();
+            }
         }
         return $array;
 
@@ -42,19 +53,6 @@ class Anuncios{
         $sql->bindValue(":descAnuncio",$descAnuncio);
         $sql->bindValue(":precoAnuncio",$precoAnuncio);
         $sql->bindValue(":estadoAnuncio",$estadoAnuncio);
-        $sql->execute();
-    }
-
-    public function excluirAnuncio($id){
-        global $pdo;
-        $sql = "DELETE FROM anuncios_imagens WHERE id_anuncios = :id_anuncio";
-        $sql = $pdo->prepare($sql);
-        $sql->bindValue(":id_anuncio", $id);
-        $sql->execute();
-
-        $sql = "DELETE FROM anuncio WHERE id = :id";
-        $sql = $pdo->prepare($sql);
-        $sql->bindValue(":id", $id);
         $sql->execute();
     }
 
@@ -79,11 +77,11 @@ class Anuncios{
         //savar imagens no servidor
         if(count($fotos) > 0){//verifica se há dados no array de fotos;
 
-            for($q = 0; $q < count($fotos); $q++){//percorre o array de fotos;
+            for($q = 0; $q < count($fotos['tmp_name']); $q++){//percorre o array de fotos;
                 $tipo =  $fotos['type'][$q];
                 if(in_array($tipo,array('image/jpeg','image/png'))){//verifica se as fotos selecionadas tem a exttenção jpeg e png, é possivel ver essa informação ao aplicar um print_r() no array onde estão guardadas os dados das fotos;
 
-                    $tmpname = md5(time().rand(0,9999)).'jpg';//gera um nome aleatório pros arquivos
+                    $tmpname = md5(time().rand(0,9999)).'.jpg';//gera um nome aleatório pros arquivos
 
                     move_uploaded_file($fotos['tmp_name'][$q], 'assets/images/anuncios/'.$tmpname);//onde salvar as imagens;
 
@@ -119,6 +117,42 @@ class Anuncios{
                 };
             }
         }
+    }
+    
+    public function excluirAnuncio($id){
+        global $pdo;
+        $sql = "DELETE FROM anuncios_imagens WHERE id_anuncios = :id_anuncio";
+        $sql = $pdo->prepare($sql);
+        $sql->bindValue(":id_anuncio", $id);
+        $sql->execute();
+
+        $sql = "DELETE FROM anuncio WHERE id = :id";
+        $sql = $pdo->prepare($sql);
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+    }
+
+    public function excluirFoto($id){
+        global $pdo;
+
+        $id_anuncio = 0;
+
+        $sql = "SELECT id_anuncios FROM anuncios_imagens WHERE id = :id";
+        $sql = $pdo->prepare($sql);
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $row = $sql->fetch();
+            $id_anuncio = $row['id_anuncios'];
+        }
+
+        $sql = "DELETE FROM anuncios_imagens WHERE id = :id";
+        $sql = $pdo->prepare($sql);
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+
+        return $id_anuncio;
     }
 }
 ?>
