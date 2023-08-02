@@ -58,7 +58,7 @@ class Anuncios{
         $sql->execute();
     }
 
-    public function editAnuncio($catAnuncio, $tituloAnuncio, $descAnuncio, $precoAnuncio, $estadoAnuncio, $id){
+    public function editAnuncio($catAnuncio, $tituloAnuncio, $descAnuncio, $precoAnuncio, $estadoAnuncio, $fotos,$id){
         global $pdo;
         $sql = "UPDATE anuncio SET
         id_categoria = :catAnuncio,
@@ -75,6 +75,20 @@ class Anuncios{
         $sql->bindValue(":estadoAnuncio",$estadoAnuncio);
         $sql->bindValue(":id",$id);
         $sql->execute();
+
+        if(count($fotos) > 0){//verifica se há dados no array de fotos;
+
+            for($q = 0; $q < count($fotos); $q++){//percorre o array de fotos;
+                $tipo =  $fotos['type'][$q];
+                if(in_array($tipo,array('image/jpeg','image/png'))){//verifica se as fotos selecionadas tem a exttenção jpeg e png, é possivel ver essa informação ao aplicar um print_r() no array onde estão guardadas os dados das fotos;
+
+                    $tmpname = md5(time().rand(0,9999)).'jpg';//gera um nome aleatório pros arquivos
+
+                    move_uploaded_file($fotos['tmp_name'][$q], 'assets/images/anuncios/'.$tmpname);//onde salvar as imagens
+
+                };
+            }
+        }
     }
 }
 ?>
