@@ -76,6 +76,7 @@ class Anuncios{
         $sql->bindValue(":id",$id);
         $sql->execute();
 
+        //savar imagens no servidor
         if(count($fotos) > 0){//verifica se há dados no array de fotos;
 
             for($q = 0; $q < count($fotos); $q++){//percorre o array de fotos;
@@ -84,7 +85,36 @@ class Anuncios{
 
                     $tmpname = md5(time().rand(0,9999)).'jpg';//gera um nome aleatório pros arquivos
 
-                    move_uploaded_file($fotos['tmp_name'][$q], 'assets/images/anuncios/'.$tmpname);//onde salvar as imagens
+                    move_uploaded_file($fotos['tmp_name'][$q], 'assets/images/anuncios/'.$tmpname);//onde salvar as imagens;
+
+                    list($width_orig, $height_orig) = getimagesize('assets/images/anuncios/'.$tmpname);//capturando as dimensões da imagens;
+
+                    $ratio = $width_orig / $height_orig;//calculo de proporçãode imagem *lembrar de analisar essa linha de código pa entender melhor o que tá aontecendo*;
+                    $width = 500;
+                    $height = 500;
+
+                    if($width/$height > $ratio){//comparando as propocionalidades entre a imagem inputada com a dimensões desejadas;
+                        $width = $height*$ratio;// caso true, então a largura será altura vezes a proporção do tamanho original das imagens
+                    }else{
+                        $height = $width/$ratio;// caso false, então a altura será largura dividido a proporção do tamanho original das imagens
+                    }
+
+                    $img = imagecreatetruecolor($width, $height);
+                    if($tipo == 'image/jpeg'){
+                        $origi = imagecreatefromjpeg('assets/images/anuncios/'.$tmpname);
+                    }elseif($tipo == 'image/png'){
+                        $origi = imagecreatefrompng('assets/images/anuncios/'.$tmpname);
+                    }
+
+                    imagecopyresampled($img, $origi,0,0,0,0,$width,$height,$width_orig,$height_orig);
+                    imagejpeg($img, 'assets/images/anuncios/'.$tmpname,80);
+
+                    //salvar no banco de dados
+                    $sql = "INSERT INTO anuncios_imagens SET id_anuncios = :id_anuncios, url = :url";
+                    $sql = $pdo->prepare($sql);
+                    $sql->bindValue(":id_anuncios", $id);
+                    $sql->bindValue(":url", $tmpname);
+                    $sql->execute();
 
                 };
             }
