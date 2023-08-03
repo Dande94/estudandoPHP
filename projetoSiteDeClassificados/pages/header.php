@@ -15,7 +15,7 @@
 <body>
     <nav class="navbar bg-dark navbar-expand-lg rounded-bottom">
         <div class="container-fluid">
-            <a class="navbar-brand text-light" href="#">Classificados</a>
+            <a class="navbar-brand text-light" href="index.php">Classificados</a>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav text-light">
                     <?php if (isset($_SESSION['cLogin']) && !empty($_SESSION['cLogin'])) : ?>
