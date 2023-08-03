@@ -48,6 +48,21 @@ class Anuncios{
         $row = $sql->fetch();
         return $row['c'];
     }
+    public function getUltimosAnuncios(){
+        global $pdo;
+        $array = [];
+        $sql = "SELECT *,
+        (select anuncios_imagens.url from anuncios_imagens where anuncios_imagens.id_anuncios = anuncio.id limit 1) as url,
+        (select categoria.nome from categoria where categoria.id = anuncio.id_categoria) as categoria
+        FROM anuncio ORDER BY id DESC";
+        $sql = $pdo->prepare($sql);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $array = $sql->fetchAll();
+        }
+         return $array;
+    }
 
     public function addAnuncio($catAnuncio, $tituloAnuncio, $descAnuncio, $precoAnuncio, $estadoAnuncio){
         global $pdo;
