@@ -18,7 +18,7 @@ $info = $a->getAnuncio($id);
 ?>
 <div class="container my-3">
     <div class="row mx-2">
-        <div class="col-sm-4">
+        <div class="col-sm-5">
             <div id="carouselExample" class="carousel slide carousel-dark slide">
                 <div class="carousel-inner">
                     <?php foreach ($info['fotos'] as $chave => $foto) : ?>
@@ -35,8 +35,24 @@ $info = $a->getAnuncio($id);
                 </button>
             </div>
         </div>
-        <div class="col-sm-8">
-
+        <div class="col-sm-7">
+            <h1>
+            <?php echo $info['titulo'] ;?>
+            </h1>
+            <h4>
+                Categoria: <?php echo $info['categoria'] ;?>
+            </h4>
+            <p>
+                Descrição: <?php echo $info['descricao'] ;?>
+            </p>
+            <br>
+            <h3>
+                R$ <?php echo number_format($info['preco'],2) ?>
+            </h3>
+            <br>
+            <br>
+            <h4>Vendedor: <?php echo $info['nome'] ;?></h4>
+            <h4>Telefone: <?php echo $info['telefone'] ;?></h4>
         </div>
     </div>
 </div>
