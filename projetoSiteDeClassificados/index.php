@@ -2,8 +2,10 @@
 <?php
 require_once "classes/anuncios.class.php";
 require_once 'classes/usuario.class.php';
+require_once 'classes/categorias.class.php';
 $a = new Anuncios();
 $u = new Usuario();
+$c = new Categorias();
 
 $total_anuncios = $a->getTotalAnuncios();
 $total_usuarios = $u->getTotalUsuarios();
@@ -30,6 +32,39 @@ $ultimos_anuncios = $a->getUltimosAnuncios($p, $max_anuncio_por_pagina);
     <div class="row mx-2">
         <div class="col-sm-4">
             <h5>Busca avançada</h5>
+            <form action="" method="get">
+                <label for="">Categoria:</label>
+                <select class="form-select" id="categoria" name="filtros[categoria]" aria-label="Default select example">
+                    <option value=""></option>
+                        <?php $cats = $c->getLista();
+                        foreach ($cats as $cat) :
+                        ?>
+                        <option value="<?php echo $cat['id'] ?>"><?php echo $cat['nome'] ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <label for="">Preço:</label>
+                <select class="form-select" id="preco" name="filtros[preco]" aria-label="Default select example">
+                    <option value=""></option>
+                    <option value="0-50">R$ 0 - 50</option>
+                    <option value="51-200">R$ 51 - 200</option>
+                    <option value="201-400">R$ 201 - 400</option>
+                    <option value="401-600">R$ 401 - 600</option>
+                    <option value="601-800">R$ 601 - 800</option>
+                    <option value="801-1000">R$ 801 - 1000</option>
+                    <option value="1001-2000">R$ 1001 - 2000</option>
+                </select>
+                <label for="">Estado de conservação:</label>
+                <select class="form-select" id="estado" name="filtros[estado]" aria-label="Default select example">
+                    <option value=""></option>
+                    <option value="0">Ruim</option>
+                    <option value="1">Bom</option>
+                    <option value="2">Ótimo</option>
+                </select>
+                <br>
+                <div class="d-grid gap-2">
+                    <input class="btn btn-outline-dark" type="submit" value="Filtrar">
+                </div>    
+            </form>
         </div>
         <div class="col-sm-8">
             <h5>Últimos Anúncios</h5>
@@ -57,12 +92,12 @@ $ultimos_anuncios = $a->getUltimosAnuncios($p, $max_anuncio_por_pagina);
             </table>
             <nav>
                 <ul class="pagination pagination-sm">
-                    <?php for($q=1;$q<=$total_paginas;$q++):?>
-                        <li class="page-item <?php echo($p==$q)?'active':'';?>"><a class="page-link " href="index.php?p=<?php echo $q?>"><?php echo $q?></a></li>
-                    <?php endfor;?>
+                    <?php for ($q = 1; $q <= $total_paginas; $q++) : ?>
+                        <li class="page-item <?php echo ($p == $q) ? 'active' : ''; ?>"><a class="page-link " href="index.php?p=<?php echo $q ?>"><?php echo $q ?></a></li>
+                    <?php endfor; ?>
                 </ul>
             </nav>
         </div>
-</div>
+    </div>
 </div>
 <?php require_once 'pages/footer.php'; ?>
