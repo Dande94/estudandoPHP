@@ -19,7 +19,7 @@ if(isset($_GET['filtros'])){//não precisa de addslashes(), pq sera recebido um 
 }
 
 
-$total_anuncios = $a->getTotalAnuncios();
+$total_anuncios = $a->getTotalAnuncios($filtros);
 $total_usuarios = $u->getTotalUsuarios();
 
 //paginação
@@ -75,7 +75,7 @@ $ultimos_anuncios = $a->getUltimosAnuncios($p, $max_anuncio_por_pagina,$filtros)
                 <br>
                 <div class="d-flex justify-content-between gap-2">
                     <input class="btn btn-outline-primary w-50" type="reset" value="Limpar">
-                    <input class="btn btn-outline-dark w-50" type="submit" value="Filtrar">
+                    <input class="btn btn-dark w-50" type="submit" value="Filtrar">
                 </div>    
             </form>
         </div>
