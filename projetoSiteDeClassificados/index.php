@@ -106,7 +106,11 @@ $ultimos_anuncios = $a->getUltimosAnuncios($p, $max_anuncio_por_pagina,$filtros)
             <nav>
                 <ul class="pagination pagination-sm">
                     <?php for ($q = 1; $q <= $total_paginas; $q++) : ?>
-                        <li class="page-item <?php echo ($p == $q) ? 'active' : ''; ?>"><a class="page-link " href="index.php?p=<?php echo $q ?>"><?php echo $q ?></a></li>
+                        <li class="page-item <?php echo ($p == $q) ? 'active' : ''; ?>"><a class="page-link " href="index.php?<?php 
+                        $w=$_GET;
+                        $w['p'] =$q;
+                        echo http_build_query($w);
+                        ?>"><?php echo $q ?></a></li>
                     <?php endfor; ?>
                 </ul>
             </nav>
