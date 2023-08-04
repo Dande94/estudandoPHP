@@ -7,6 +7,18 @@ $a = new Anuncios();
 $u = new Usuario();
 $c = new Categorias();
 
+
+$filtros = [
+    'categoria' => '',
+    'preco' => '',
+    'estado' => ''
+];
+
+if(isset($_GET['filtros'])){//não precisa de addslashes(), pq sera recebido um array;
+    $filtros = $_GET['filtros'];
+}
+
+
 $total_anuncios = $a->getTotalAnuncios();
 $total_usuarios = $u->getTotalUsuarios();
 
@@ -18,7 +30,7 @@ if (isset($_GET['p']) && !empty($_GET['p'])) {
 $max_anuncio_por_pagina = 4;
 $total_paginas = ceil($total_anuncios / $max_anuncio_por_pagina);
 //fim-paginação
-$ultimos_anuncios = $a->getUltimosAnuncios($p, $max_anuncio_por_pagina);
+$ultimos_anuncios = $a->getUltimosAnuncios($p, $max_anuncio_por_pagina,$filtros);
 
 ?>
 
@@ -39,30 +51,31 @@ $ultimos_anuncios = $a->getUltimosAnuncios($p, $max_anuncio_por_pagina);
                         <?php $cats = $c->getLista();
                         foreach ($cats as $cat) :
                         ?>
-                        <option value="<?php echo $cat['id'] ?>"><?php echo $cat['nome'] ?></option>
+                        <option value="<?php echo $cat['id'] ?>" <?php echo ( $cat['id'] == $filtros['categoria']) ? 'selected="selected"' : '' ?> ><?php echo $cat['nome'] ?></option>
                     <?php endforeach; ?>
                 </select>
                 <label for="">Preço:</label>
                 <select class="form-select" id="preco" name="filtros[preco]" aria-label="Default select example">
                     <option value=""></option>
-                    <option value="0-50">R$ 0 - 50</option>
-                    <option value="51-200">R$ 51 - 200</option>
-                    <option value="201-400">R$ 201 - 400</option>
-                    <option value="401-600">R$ 401 - 600</option>
-                    <option value="601-800">R$ 601 - 800</option>
-                    <option value="801-1000">R$ 801 - 1000</option>
-                    <option value="1001-2000">R$ 1001 - 2000</option>
+                    <option value="0-50" <?php echo ($filtros['preco'] =='0-50') ? 'selected="selected"' : '' ?> >R$ 0 - 50</option>
+                    <option value="51-200" <?php echo ($filtros['preco'] =='51-200') ? 'selected="selected"' : '' ?> >R$ 51 - 200</option>
+                    <option value="201-400" <?php echo ($filtros['preco'] =='201-400') ? 'selected="selected"' : '' ?> >R$ 201 - 400</option>
+                    <option value="401-600" <?php echo ($filtros['preco'] =='401-600') ? 'selected="selected"' : '' ?> >R$ 401 - 600</option>
+                    <option value="601-800" <?php echo ($filtros['preco'] =='601-800') ? 'selected="selected"' : '' ?> >R$ 601 - 800</option>
+                    <option value="801-1000" <?php echo ($filtros['preco'] =='801-1000') ? 'selected="selected"' : '' ?> >R$ 801 - 1000</option>
+                    <option value="1001-2000" <?php echo ($filtros['preco'] =='1001-2000') ? 'selected="selected"' : '' ?> >R$ 1001 - 2000</option>
                 </select>
                 <label for="">Estado de conservação:</label>
                 <select class="form-select" id="estado" name="filtros[estado]" aria-label="Default select example">
                     <option value=""></option>
-                    <option value="0">Ruim</option>
-                    <option value="1">Bom</option>
-                    <option value="2">Ótimo</option>
+                    <option value="0" <?php echo ($filtros['estado'] =='0') ? 'selected="selected"' : '' ?> >Ruim</option>
+                    <option value="1" <?php echo ($filtros['estado'] =='1') ? 'selected="selected"' : '' ?> >Bom</option>
+                    <option value="2" <?php echo ($filtros['estado'] =='2') ? 'selected="selected"' : '' ?> >Ótimo</option>
                 </select>
                 <br>
-                <div class="d-grid gap-2">
-                    <input class="btn btn-outline-dark" type="submit" value="Filtrar">
+                <div class="d-flex justify-content-between gap-2">
+                    <input class="btn btn-outline-primary w-50" type="reset" value="Limpar">
+                    <input class="btn btn-outline-dark w-50" type="submit" value="Filtrar">
                 </div>    
             </form>
         </div>
