@@ -8,6 +8,9 @@ if(isset($_SESSION['aviso'])){
 }
 
 ?>
+<a href="apagar.php">apagar Cookie</a>
+<br>
+<br>
 <form action="recebedor.php" method="get">
     <label for="">Nome:
         <br>
