@@ -1,4 +1,13 @@
-<?php require_once 'header.php';?>
+<?php 
+session_start();
+require_once 'header.php'
+;
+if(isset($_SESSION['aviso'])){
+    echo $_SESSION['aviso'];
+    $_SESSION['aviso'] = '';
+}
+
+?>
 <form action="recebedor.php" method="get">
     <label for="">Nome:
         <br>
