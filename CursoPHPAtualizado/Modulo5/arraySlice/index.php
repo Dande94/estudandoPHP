@@ -1,4 +1,5 @@
 <?php 
+// gera um novo array, com as novas informações;
 $array = range('a','f');
 
 //$retorno = array_slice($array, 0,2);//função fatiar o array com 3 parametros, 1º o array, 2º onde começa , 3º quantos itens pegar.
@@ -7,5 +8,4 @@ $array = range('a','f');
 $retorno = array_slice($array, -1,1);//descrescente, começando pelo final do array, pegando o ultimo número;
 
 print_r($retorno);
-
 ?>
