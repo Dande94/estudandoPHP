@@ -12,3 +12,5 @@
     </form>
 </body>
 </html>
+
+<script>alert("Imagem Enviada");</script>
