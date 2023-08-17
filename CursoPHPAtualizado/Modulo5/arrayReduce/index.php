@@ -4,7 +4,7 @@ function somar($subtotal, $item){//o argumento '$sobtotal' se refere ao valor qu
     $subtotal += $item;
     return $subtotal;
 }
-$total = array_reduce($numeros, 'somar');//função que reduz o array ao valor só;2 parametros, 1º o array, 2º a função a ser aplicada;3º parametro opcional onde seta um valor que será usado como valor incial;
+$total = array_reduce($numeros, 'somar');//função que reduz o array ao valor só;2 parametros, 1º o array, 2º a função a ser aplicada;3º parametro opcional onde seta um valor que será usado como valor incial valor padrão é '0'(zero); 
 echo $total;// (1+2+3+4+5) = 15 ;
 //age como um loop vendo cada valor do array e aplicando a uma formúla e reduzindo os valores;
 echo "<br>";
