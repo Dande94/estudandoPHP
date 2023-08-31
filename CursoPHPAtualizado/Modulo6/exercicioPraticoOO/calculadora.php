@@ -26,8 +26,9 @@ class Calculadora{
 
     }
     public function clear(){
+        
         $this->n_total = 0;
-        return $this->n_total;
+        $this->total();
     }
     
 }

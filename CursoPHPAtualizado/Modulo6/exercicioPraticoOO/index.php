@@ -10,6 +10,7 @@ $calc->add(0.5);
 $total= $calc->total();
 
 echo "Total: {$total}";
+
 $calc->clear();
 
 ?>
