@@ -25,8 +25,8 @@ if($sql->rowCount() > 0){
             <td><?= $item['nome'] ?></td>
             <td><?= $item['email'] ?></td>
             <td>
-                <a href="editar.php?<?= $item['id'] ?>">[Editar]</a>
-                <a href="excluir.php?<?= $item['id'] ?>">[Excluir]</a>
+                <a href="editar.php?id=<?= $item['id'] ?>">[Editar]</a>
+                <a href="excluir.php?id=<?= $item['id'] ?>">[Excluir]</a>
             </td>
         </tr>
     <?php endforeach; ?>
