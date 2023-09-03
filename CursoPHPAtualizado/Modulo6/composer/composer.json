@@ -3,8 +3,7 @@
         "monolog/monolog": "^3.4"
     },
     "autoload":{
-        "psr-4":[
-            {}
-        ]
+        "psr-4":{"classes\\":"classes/"} /* especificar 1º o namespace. depois de que pasta ele tá se referindo; alteração que permite usar tanto as classes do composer quanto a as próprias*/
     }
 }
+
