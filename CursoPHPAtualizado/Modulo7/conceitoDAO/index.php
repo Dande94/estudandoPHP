@@ -1,14 +1,9 @@
 <?php 
 require_once 'config.php';
-$lista =[];
-$sql = $pdo->query("SELECT * FROM usuarios");
+require_once 'dao/UsuarioDaoMysql.php';
 
-if($sql->rowCount() > 0){
-    $lista = $sql->fetchAll(PDO::FETCH_ASSOC);
-
-}else{
-    
-}
+$usuarioDao = new UsuarioDaoMysql($pdo);//aqui envio o pdo para a construtora lá na classe;
+$lista = $usuarioDao->findAll();//todos os itens do array vão ser objetos da classe Usuario;
 
 ?>
 <a href="adicionar.php">Adicionar Usuário</a>
@@ -19,14 +14,14 @@ if($sql->rowCount() > 0){
         <th>EMAIL</th>
         <th>AÇÕES</th>
     </tr>
-    <?php foreach($lista as $item): ?>
+    <?php foreach($lista as $usuario): //agora $item vai ser um objeto da classe Usuario ?> 
         <tr>
-            <td><?= $item['id'] ?></td>
-            <td><?= $item['nome'] ?></td>
-            <td><?= $item['email'] ?></td>
+            <td><?= $usuario->getId();?></td>
+            <td><?= $usuario->getNome();?></td>
+            <td><?= $usuario->getEmail();?></td>
             <td>
-                <a href="editar.php?id=<?= $item['id'] ?>">[Editar]</a>
-                <a href="excluir.php?id=<?= $item['id'] ?>" onclick="return confirm('Tem certeza que deseja excluir esse usuário?')">[Excluir]</a>
+                <a href="editar.php?id=<?= $usuario->getId() ?>">[Editar]</a>
+                <a href="excluir.php?id=<?= $usuario->getId() ?>" onclick="return confirm('Tem certeza que deseja excluir esse usuário?')">[Excluir]</a>
                 <!--onclick="return confirm('Tem certeza que deseja excluir esse usuário?')" expressa um alert que espera uma confirmação para excluir  -->
             </td>
         </tr>
