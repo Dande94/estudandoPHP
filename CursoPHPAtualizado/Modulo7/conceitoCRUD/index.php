@@ -26,7 +26,8 @@ if($sql->rowCount() > 0){
             <td><?= $item['email'] ?></td>
             <td>
                 <a href="editar.php?id=<?= $item['id'] ?>">[Editar]</a>
-                <a href="excluir.php?id=<?= $item['id'] ?>">[Excluir]</a>
+                <a href="excluir.php?id=<?= $item['id'] ?>" onclick="return confirm('Tem certeza que deseja excluir esse usuário?')">[Excluir]</a>
+                <!--onclick="return confirm('Tem certeza que deseja excluir esse usuário?')" expressa um alert que espera uma confirmação para excluir  -->
             </td>
         </tr>
     <?php endforeach; ?>
