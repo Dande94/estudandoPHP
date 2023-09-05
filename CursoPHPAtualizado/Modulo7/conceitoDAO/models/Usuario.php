@@ -33,7 +33,9 @@ interface UsuarioDAO{//aplicação do conceito DAO, toda classe que quiser fazer
 
     public function findAll();//buscar todos os registro;
 
-    public function findById($id);//buscar registro pelo Id;;
+    public function findById($id);//buscar registro pelo Id;
+     
+    public function findByEmail($email);//buscar registro pelo email;
 
     public function update(Usuario $u);//recebe um objeto da classe Usuario;
     

@@ -10,7 +10,14 @@ class UsuarioDaoMysql implements UsuarioDAO{
      }
 
     public function add(Usuario $u){
+        $sql = "INSERT INTO usuarios (nome, email) VALUES (:nome, :email)";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(":nome", $u->getNome());
+        $sql->bindValue(":email", $u->getEmail());
+        $sql->execute();
 
+        $u->setId($this->pdo->lastInsertId());
+        return $u;
     }
 
     public function findAll(){
@@ -33,6 +40,27 @@ class UsuarioDaoMysql implements UsuarioDAO{
     }
 
     public function findById($id){
+    }
+
+    public function findByEmail($email){//aqui irá retorna o próprio objeto ou false;
+        $sql = "SELECT * FROM usuarios WHERE email = :email";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(':email', $email);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $data = $sql->fetch();
+
+            $u = new Usuario();
+            $u->setId($data['id']);
+            $u->setNome($data['nome']);
+            $u->setEmail($data['email']);
+            //acima foi usado setter's onde as informações foram setadas nas variáveis em private da classe Usuario
+
+            return $u;//retorno do objeto, mas não será usada;
+        }else{
+            return false;
+        }
 
     }
 
