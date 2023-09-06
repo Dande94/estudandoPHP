@@ -1,17 +1,16 @@
 <?php 
 require_once "config.php";
-$info = [];
+
+require_once 'dao/UsuarioDaoMysql.php';
+$usuarioDao = new UsuarioDaoMysql($pdo);
+$usuario = new Usuario;//aqui o professor seta $usuario como false, porém fica expressando incompatibilidade de codigo na IDE, então troquei  para uma instância, aparentemente, não houve nenhum problema;
+
 $id = filter_input(INPUT_GET,'id',FILTER_SANITIZE_NUMBER_INT);
 
 if($id){
-    $sql = "SELECT * FROM usuarios WHERE id = :id";
-    $sql = $pdo->prepare($sql);
-    $sql->bindValue(":id",$id);
-    $sql->execute();
-    if($sql->rowCount() > 0){
-        $info = $sql->fetch(PDO::FETCH_ASSOC);
-    }
-}else{
+    $usuario = $usuarioDao->findById($id);
+}
+if($usuario === false){
     header('Location: index.php');
     exit;
 }
@@ -21,15 +20,15 @@ if($id){
 ?>
 <h1>Editar Usuário</h1>
 <form action="editar_action.php" method="post">
-    <input type="hidden" name="id_exemplo" value="<?= $info['id'] ?>">
+    <input type="hidden" name="id_exemplo" value="<?= $usuario->getId();?>">
     <label for="">
         Nome: <br>
-        <input type="text" name="name_exemplo" id="" value="<?= $info['nome'] ?>">
+        <input type="text" name="name_exemplo" id="" value="<?= $usuario->getNome();?>">
     </label>
     <br><br>
     <label for="">
         email: <br>
-        <input type="email" name="email_exemplo" id="" value="<?= $info['email']?>">
+        <input type="email" name="email_exemplo" id="" value="<?= $usuario->getEmail();?>">
     </label>
     <br><br>
     <input type="submit" value="Salvar">
