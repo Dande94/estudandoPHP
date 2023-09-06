@@ -5,6 +5,7 @@ class UsuarioDaoMysql implements UsuarioDAO{
      private $pdo;
 
      public function __construct(PDO $driver)//recebendo a conexão pdo lá do index;
+     //injeção de depêndencia
      {
         $this->pdo = $driver;//conexão com o banco vinda do require_once 'config.php' no index.php
      }
@@ -93,7 +94,10 @@ class UsuarioDaoMysql implements UsuarioDAO{
     }
     
     public function delete($id){
-
+        $sql = "DELETE FROM usuarios WHERE id = :id";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(":id", $id);
+        $sql->execute();
     }
 }
 ?>
