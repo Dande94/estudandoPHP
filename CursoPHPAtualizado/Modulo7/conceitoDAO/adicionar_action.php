@@ -9,7 +9,7 @@ $email_exemplo = filter_input(INPUT_POST,'email_exemplo', FILTER_VALIDATE_EMAIL)
 
 if($name_exemplo && $email_exemplo){
 
-     if($usuarioDao->findByEmail($email) === false){
+     if($usuarioDao->findByEmail($email_exemplo) === false){
         $novoUsuario = new Usuario();
         $novoUsuario->setNome($name_exemplo);
         $novoUsuario->setEmail($email_exemplo);

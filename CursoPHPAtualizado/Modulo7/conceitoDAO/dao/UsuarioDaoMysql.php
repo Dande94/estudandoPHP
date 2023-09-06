@@ -48,7 +48,9 @@ class UsuarioDaoMysql implements UsuarioDAO{
         $sql->bindValue(':email', $email);
         $sql->execute();
 
-        if($sql->rowCount() > 0){
+        if($sql->rowCount() == 0){
+            return false;
+        }else{
             $data = $sql->fetch();
 
             $u = new Usuario();
@@ -58,8 +60,6 @@ class UsuarioDaoMysql implements UsuarioDAO{
             //acima foi usado setter's onde as informações foram setadas nas variáveis em private da classe Usuario
 
             return $u;//retorno do objeto, mas não será usada;
-        }else{
-            return false;
         }
 
     }
