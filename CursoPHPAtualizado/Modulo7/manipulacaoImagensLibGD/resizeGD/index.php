@@ -23,12 +23,16 @@ $ratioDest = $maxWidth / $maxHeigth;//proporção das imagens no tamanho máximo
 $finalWidth = 0;
 $finalHeigth = 0;
 
-//redimensionar a imagem:
+//identificar se é retrato ou paisagem | redimensionar a imagem:
 if($ratioDest > $ratio){
+    //proporcionalizar a Largura
     $finalWidth = $maxHeigth * $ratio;
+    //Altura recebe  valor máximo da redução
     $finalHeigth = $maxHeigth; 
 }else{
+    //proporcionalizar a Altura
     $finalHeigth = $maxWidth / $ratio;
+    //Largura recebe valor máximo da redução
     $finalWidth = $maxWidth;
 }
 /*
@@ -51,7 +55,7 @@ $originalImg = imagecreatefromjpeg($arquivo);
 imagecopyresampled(
     $imagem,//espaço onde será copiada a imagem;
     $originalImg,// qual imagem desejo copiar;
-    0,0,0,0,//posições originais e posições finais | X e Y
+    0,0,0,0,//posições final e posições original | X e Y
     $finalWidth, $finalHeigth,//dimensões finais da imagem;
     $originalWidth,$originalHeigth//dimensões originais da imagem;
 );
